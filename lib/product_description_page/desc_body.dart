@@ -19,34 +19,37 @@ Widget productDesc_body (double _width, double _height) {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text("PRODUCT NAME",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    )),
-                FaIcon(FontAwesomeIcons.heart, size: 18, color: kTextColor),
-              ],
-            ),
-            const SizedBox(height: 10),
-            const Text("Color",
+            Text("PRODUCT NAME",
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                 )),
+            const Text("Nama Brand", style: TextStyle(
+              fontSize: 12,
+              fontStyle: FontStyle.italic,
+            )),
+            const SizedBox(height: 10),
+            const Text("Rp. 5.000.000", style: TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.bold,
+            )),
+            const SizedBox(height: 20),
+            const Text("Color",
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                )),
             SizedBox(
               width: _width,
-              height: 50,
+              height: 40,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 4,
                 itemBuilder: (context, index){
                   return Container(
                       margin: const EdgeInsets.only(right: 5),
-                      width: 33,
-                      height: 33,
+                      width: 28,
+                      height: 28,
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         shape: BoxShape.circle,
@@ -55,23 +58,23 @@ Widget productDesc_body (double _width, double _height) {
                   },
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             const Text("Size",
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 12,
                   fontWeight: FontWeight.bold,
                 )),
             const SizedBox(height: 10),
             SizedBox(
               width: _width,
-              height: 28,
+              height: 25,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 4,
                 itemBuilder: (context, index){
                   return Container(
                     margin: const EdgeInsets.only(right: 5),
-                    width: 45,
+                    width: 35,
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: const BorderRadius.all(Radius.circular(5)),
@@ -84,7 +87,7 @@ Widget productDesc_body (double _width, double _height) {
             const SizedBox(height: 20),
             const Text("Description",
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 12,
                   fontWeight: FontWeight.bold,
                 )),
             const SizedBox(height: 10),

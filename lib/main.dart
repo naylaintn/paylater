@@ -5,6 +5,7 @@ import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:paylater_startup/product_description_page/desc_screen.dart';
 import 'package:paylater_startup/util/theme.dart';
 
+import 'category/category_screen.dart';
 import 'home_page/home_screen.dart';
 
 void main() {
@@ -27,14 +28,9 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/', page: () => MyApp()),
         GetPage(name: '/product_desc', page: () => productDesc_screen()),
+        GetPage(name: '/category_screen', page: () => category_screen()),
       ],
-      home: LayoutBuilder(
-        builder: ((BuildContext context, BoxConstraints constraints){
-        double _width = constraints.maxWidth;
-        double _height = constraints.maxHeight;
-        return homeScreen(_width, _height);
-      }),
-      ),
-    );
+      home: const homeScreen(),
+      );
   }
 }

@@ -3,6 +3,7 @@ import 'package:paylater_startup/home_page/category.dart';
 import 'package:paylater_startup/home_page/promo_information.dart';
 import 'package:paylater_startup/home_page/top_brands.dart';
 import 'package:paylater_startup/util/product_template.dart';
+import 'package:get/get.dart';
 
 Widget HomeBody(double _width, double _height){
   return Padding(
@@ -21,9 +22,12 @@ Widget HomeBody(double _width, double _height){
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text("CATEGORY", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-            Text("View All", style: TextStyle(fontSize: 10)),
+          children: [
+            Text("CATEGORY", style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+            GestureDetector(
+              onTap: (){Get.toNamed("/category_screen");},
+              child: const Text("View All", style: TextStyle(fontSize: 10)),
+            ),
           ],
         ),
 
@@ -35,9 +39,12 @@ Widget HomeBody(double _width, double _height){
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Text("TOP BRANDS", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-            Text("View All", style: TextStyle(fontSize: 10)),
+          GestureDetector(
+            onTap: (){},
+            child: Text("View All", style: TextStyle(fontSize: 10)),
+          ),
           ],
         ),
 
@@ -56,7 +63,7 @@ Widget HomeBody(double _width, double _height){
         ),
 
         Container(
-          height: _height*0.5,
+          height: _height*0.42,
           color: Colors.transparent,
             child: ListView.builder(
                 shrinkWrap: true,
@@ -68,7 +75,7 @@ Widget HomeBody(double _width, double _height){
             ),
           ),
 
-        const SizedBox(height: 15),
+        const SizedBox(height: 10),
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,7 +86,7 @@ Widget HomeBody(double _width, double _height){
         ),
 
         Container(
-          height: _height*0.5,
+          height: _height*0.42,
           color: Colors.transparent,
           child: ListView.builder(
               shrinkWrap: true,
@@ -91,18 +98,21 @@ Widget HomeBody(double _width, double _height){
           ),
         ),
 
-        const SizedBox(height: 15),
+        const SizedBox(height: 10),
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Text("SPECIAL PROMO", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-            Text("View All", style: TextStyle(fontSize: 10)),
+            GestureDetector(
+              onTap: (){},
+              child: Text("View All", style: TextStyle(fontSize: 10)),
+            ),
           ],
         ),
 
         Container(
-          height: _height*0.5,
+          height: _height*0.42,
           color: Colors.transparent,
           child: ListView.builder(
               shrinkWrap: true,

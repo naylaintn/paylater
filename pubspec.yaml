@@ -63,8 +63,11 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-assets:
-  -assets/images/pictures/
+
+  assets:
+    - assets/images/
+    - assets/svg/
+    - assets/icons/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -83,32 +86,13 @@ assets:
   # list giving the asset and other descriptors for the font. For
   # example:
 fonts:
-  - family: Josefin
+  - family: Muli
     fonts:
-        - asset: assets/fonts/josefin/JosefinSans-Thin.ttf
-        - asset: assets/fonts/josefin/JosefinSans-Light.ttf
-          weight: 300
-        - asset: assets/fonts/josefin/JosefinSans-Regular.ttf
-        - asset: assets/fonts/josefin/JosefinSans-Italic.ttf
-        - asset: assets/fonts/josefin/JosefinSans-SemiBold.ttf
-          weight: 400
-        - asset: assets/fonts/josefin/JosefinSans-Bold.ttf
-          weight: 700
-  - family: Gilroy
-    fonts:
-        - asset: assets/fonts/Gilroy/Gilroy-Light.otf
-          weight: 300
-        - asset: assets/fonts/Gilroy/Gilroy-ExtraBold.otf
-          weight: 700
-  - family: TitilliumWeb
-    fonts:
-        - asset: assets/fonts/titillium/TitilliumWeb-Regular.ttf
-        - asset: assets/fonts/titillium/TitilliumWeb-Italic.ttf
-        - asset: assets/fonts/titillium/TitilliumWeb-Light.ttf
-          weight: 300
-        - asset: assets/fonts/titillium/TitilliumWeb-Bold.ttf
-          weight: 700
-          style: italic
+      - asset: assets/fonts/muli/Muli.ttf
+      - asset: assets/fonts/muli/Muli-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/muli/Muli-Light.ttf
+        weight: 300
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

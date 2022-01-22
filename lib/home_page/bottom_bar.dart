@@ -42,8 +42,8 @@ with TickerProviderStateMixin {
 
   double iconAngle = 0;
 
-  double expandedIconSize = 32;
-  double normalIconSize = 20;
+  double expandedIconSize = 25;
+  double normalIconSize = 18;
 
   Curve forwardingCurve = Curves.elasticOut;
   Curve reversingCurve = Curves.elasticIn;
@@ -228,28 +228,25 @@ with TickerProviderStateMixin {
       alignment: Alignment.bottomCenter,
       children: [
         Container(
-          height: 60,
+          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          height: 45,
           width: _width,
+          alignment: Alignment.center,
           decoration: BoxDecoration(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: kSecondaryColor.withOpacity(0.2),
                   blurRadius: 10,
                 ),
               ]
           ),
-        ),
-        Container(
-          height: 77,
-          color: Colors.transparent,
-          alignment: Alignment.topCenter,
           child: ListView.builder(
             itemCount: 5,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => InkWell(
-                  onTap: (){
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) => InkWell(
+              onTap: (){
                 setState(() {
                   currentIndex = index;
                   HapticFeedback.lightImpact();
@@ -292,59 +289,66 @@ with TickerProviderStateMixin {
                   fifthIconController.forward();
                 }
               },
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                child: AnimatedPadding(
-                  padding: EdgeInsets.only(top: index == currentIndex ? 0 : 30),
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.fastLinearToSlowEaseIn,
-                  child: Container(
-                    width: _width*0.2,
-                    alignment: Alignment.topCenter,
-                    child: Transform.rotate(
-                      angle: index == 0
-                      ? firstIconAngle.value
-                      : index == 1
-                      ? secondIconAngle.value
-                      : index == 2
-                      ? thirdIconAngle.value
-                      : index == 3
-                      ? fourthIconAngle.value
-                      : index == 4
-                      ? fifthIconAngle.value
-                      : 0,
-                      child:
-                      // Column(
-                      //   children: [
-                          FaIcon(
-                            listOfIcons[index],
-                            size: index == 0 ? firstIconSize.value
-                                : index == 1 ? secondIconSize.value
-                                : index == 2 ? thirdIconSize.value
-                                : index == 3 ? fourthIconSize.value
-                                : index == 4 ? fifthIconSize.value
-                                : 0,
-                            color: index == currentIndex
-                                ? kSecondaryColor
-                                : kTextColor,
-                          ),
-                          // Text(
-                          //   listOfTitles[index].text,
-                          //   style: TextStyle(
-                          //     fontSize: 8,
-                          //     color: index == currentIndex
-                          //         ? kPrimaryColor
-                          //         : kTextColor,
-                          //   ),
-                          // ),
-                      //   ],
-                      // ),
-                ),
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              child: AnimatedPadding(
+                padding: EdgeInsets.symmetric(vertical: index == currentIndex ? 6 : 12),
+                duration: const Duration(milliseconds: 0),
+                curve: Curves.linearToEaseOut,
+                child: Container(
+                  width: _width*0.188,
+                  alignment: Alignment.topCenter,
+                  child: Transform.rotate(
+                    angle: index == 0
+                        ? firstIconAngle.value
+                        : index == 1
+                        ? secondIconAngle.value
+                        : index == 2
+                        ? thirdIconAngle.value
+                        : index == 3
+                        ? fourthIconAngle.value
+                        : index == 4
+                        ? fifthIconAngle.value
+                        : 0,
+                    child:
+                    // Column(
+                    //   children: [
+                    FaIcon(
+                      listOfIcons[index],
+                      size: index == 0 ? firstIconSize.value
+                          : index == 1 ? secondIconSize.value
+                          : index == 2 ? thirdIconSize.value
+                          : index == 3 ? fourthIconSize.value
+                          : index == 4 ? fifthIconSize.value
+                          : 0,
+                      color: index == currentIndex
+                          ? kPrimaryColor
+                          : kTextColor,
+                    ),
+                    // Text(
+                    //   listOfTitles[index].text,
+                    //   style: TextStyle(
+                    //     fontSize: 8,
+                    //     color: index == currentIndex
+                    //         ? kPrimaryColor
+                    //         : kTextColor,
+                    //   ),
+                    // ),
+                    //   ],
+                    // ),
+                  ),
                 ),
               ),
+            ),
           ),
         ),
-        ),
+        // Container(
+        //   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        //   height: 45,
+        //   color: Colors.transparent,
+        //   alignment: Alignment.topCenter,
+        //   child:
+        // ),
       ],
     );
   }

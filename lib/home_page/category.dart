@@ -4,11 +4,12 @@ import 'package:paylater_startup/util/colors.dart';
 
 Widget categoryList(double _width, double _height) {
   List<categoryInformation> categoryData = [
-    categoryInformation(title: "All Category", icon: const FaIcon(FontAwesomeIcons.star)),
+    categoryInformation(title: "All", icon: const FaIcon(FontAwesomeIcons.star)),
     categoryInformation(title: "Food", icon: const FaIcon(FontAwesomeIcons.utensils)),
     categoryInformation(title: "Clothes", icon: const FaIcon(FontAwesomeIcons.tshirt)),
     categoryInformation(title: "Bags", icon: const FaIcon(FontAwesomeIcons.shoppingBag)),
-    categoryInformation(title: "Make Up", icon: const FaIcon(FontAwesomeIcons.brush)),
+    categoryInformation(title: "Make Up", icon: const FaIcon(FontAwesomeIcons.heart)),
+    categoryInformation(title: "Beauty", icon: const FaIcon(FontAwesomeIcons.grinHearts)),
     categoryInformation(title: "Shoes", icon: const FaIcon(FontAwesomeIcons.shoePrints)),
     categoryInformation(title: "Accessories", icon: const FaIcon(FontAwesomeIcons.ring)),
     categoryInformation(title: "Interior", icon: const FaIcon(FontAwesomeIcons.couch)),
@@ -26,7 +27,7 @@ Widget categoryList(double _width, double _height) {
                 itemCount: categoryData.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(right: 15),
+                    padding: const EdgeInsets.only(right: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -34,18 +35,11 @@ Widget categoryList(double _width, double _height) {
                         Container(
                             width: 40,
                             height: 40,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: kPrimaryColor,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  blurRadius: 6,
-                                  offset: const Offset(0, 2),
-                                ),
-                              ],
+                              color: kSecondaryLightColor,
                             ),
-                            child: Icon(categoryData[index].icon.icon, size: 13, color: Colors.white)
+                            child: Icon(categoryData[index].icon.icon, size: 13, color: kSecondaryColor)
                         ),
                         const SizedBox(height: 5),
                         Text(categoryData[index].title, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),

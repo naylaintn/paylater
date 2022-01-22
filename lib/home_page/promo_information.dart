@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 Widget promoInfo(double _width, double _height){
 
   List<promoInformation> promoData = [
-    promoInformation(image: "images/pictures/sale_1.jpg"),
-    promoInformation(image: "images/pictures/sale_2.jpg"),
-    promoInformation(image: "images/pictures/sale_3.jpg"),
+    promoInformation(image: "images/sale_1.jpg"),
+    promoInformation(image: "images/sale_2.jpg"),
+    promoInformation(image: "images/sale_3.jpg"),
   ];
   
   return Row(
@@ -24,7 +24,10 @@ Widget promoInfo(double _width, double _height){
                 decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
-                child: Image.asset(promoData[index].image, fit: BoxFit.cover),
+                child: Image(
+                  image: AssetImage(promoData[index].image),
+                    fit: BoxFit.cover
+                ),
             );
           },
         ),

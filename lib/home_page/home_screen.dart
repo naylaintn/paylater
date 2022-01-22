@@ -3,7 +3,15 @@ import 'package:paylater_startup/home_page/bottom_bar.dart';
 import 'package:paylater_startup/home_page/header.dart';
 import 'package:paylater_startup/home_page/home_body.dart';
 
-Widget homeScreen(double _width, double _height) {
+class homeScreen extends StatelessWidget {
+  const homeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
@@ -22,3 +30,4 @@ Widget homeScreen(double _width, double _height) {
       bottomNavigationBar: const bottomNavigationBar(),
     );
   }
+}

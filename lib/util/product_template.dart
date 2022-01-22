@@ -7,37 +7,36 @@ Widget productTemplate (double _width, double _height) {
   return InkWell(
     onTap: (){Get.toNamed("/product_desc");},
     child: Container(
-      margin: EdgeInsets.fromLTRB(5, 20, 15, 30),
+      margin: EdgeInsets.fromLTRB(0, 20, 10, 20),
       child: Container(
-        width: 180,
+        width: 150,
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          color: scaffoldColor,
+          borderRadius: BorderRadius.all(Radius.circular(5)),
           boxShadow: [
             BoxShadow(
               color: kSecondaryColor.withOpacity(0.2),
               blurRadius: 6,
-              offset: const Offset(0, 2),
+              offset: const Offset(3, 4),
             )],
         ),
-        child: Center(
-          child: Column(
+        child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Stack(
                 children: [
                   Container(
-                    width: 160,
-                    height: 160,
+                    width: 140,
+                    height: 140,
                     decoration: BoxDecoration(
                       color: Colors.grey.withOpacity(0.5),
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderRadius: const BorderRadius.all(Radius.circular(5)),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                width: 150,
+                width: 135,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -59,7 +58,7 @@ Widget productTemplate (double _width, double _height) {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Harga", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                        Text("Harga", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                         FaIcon(FontAwesomeIcons.heart, size: 13, color: kTextColor),
                       ],
                     ),
@@ -70,6 +69,5 @@ Widget productTemplate (double _width, double _height) {
           ),
         ),
       ),
-    ),
   );
 }
