@@ -15,9 +15,9 @@ Widget productTemplate (double _width, double _height) {
           borderRadius: BorderRadius.all(Radius.circular(5)),
           boxShadow: [
             BoxShadow(
-              color: kSecondaryColor.withOpacity(0.2),
-              blurRadius: 6,
-              offset: const Offset(3, 4),
+              color: Colors.grey.withOpacity(0.5),
+              blurRadius: 4,
+              offset: const Offset(3, 6),
             )],
         ),
         child: Column(

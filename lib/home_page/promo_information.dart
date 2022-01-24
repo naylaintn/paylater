@@ -3,16 +3,13 @@ import 'package:flutter/material.dart';
 Widget promoInfo(double _width, double _height){
 
   List<promoInformation> promoData = [
-    promoInformation(image: "images/sale_1.jpg"),
-    promoInformation(image: "images/sale_2.jpg"),
-    promoInformation(image: "images/sale_3.jpg"),
+    promoInformation(image: "assets/images/sale_1.jpg"),
+    promoInformation(image: "assets/images/sale_2.jpg"),
+    promoInformation(image: "assets/images/sale_3.jpg"),
   ];
   
-  return Row(
-    children: [
-      Expanded(
-        child: SizedBox(
-          height: _height*0.3,
+  return SizedBox(
+          height: _height*0.35,
           width: _width,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -21,19 +18,16 @@ Widget promoInfo(double _width, double _height){
               return  Container(
                 width: _width*0.91,
                 margin: const EdgeInsets.only(right: 15),
-                decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
                 ),
-                child: Image(
-                  image: AssetImage(promoData[index].image),
-                    fit: BoxFit.cover
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image.asset(promoData[index].image, fit: BoxFit.cover),
                 ),
             );
           },
         ),
-      ),
-      ),
-    ],
   );
 }
 

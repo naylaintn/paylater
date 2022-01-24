@@ -5,7 +5,7 @@ import 'colors.dart';
 ThemeData theme() {
   return ThemeData(
     scaffoldBackgroundColor: scaffoldColor,
-    fontFamily: 'Muli',
+    fontFamily: "Muli",
     textTheme: textTheme(),
     appBarTheme: appBarTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,

@@ -15,6 +15,7 @@ Widget categoryList(double _width, double _height) {
     categoryInformation(title: "Interior", icon: const FaIcon(FontAwesomeIcons.couch)),
     categoryInformation(title: "Mobile", icon: const FaIcon(FontAwesomeIcons.mobile)),
     categoryInformation(title: "Electronic", icon: const FaIcon(FontAwesomeIcons.tv)),
+    categoryInformation(title: "Camera", icon: const FaIcon(FontAwesomeIcons.cameraRetro)),
     categoryInformation(title: "Gaming", icon: const FaIcon(FontAwesomeIcons.gamepad)),
     categoryInformation(title: "Plants", icon: const FaIcon(FontAwesomeIcons.tree)),
   ];
@@ -37,9 +38,9 @@ Widget categoryList(double _width, double _height) {
                             height: 40,
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: kSecondaryLightColor,
+                              color: kPrimaryLightColor,
                             ),
-                            child: Icon(categoryData[index].icon.icon, size: 13, color: kSecondaryColor)
+                            child: Icon(categoryData[index].icon.icon, size: 13, color: kTextColor)
                         ),
                         const SizedBox(height: 5),
                         Text(categoryData[index].title, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),

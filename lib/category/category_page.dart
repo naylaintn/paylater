@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:paylater_startup/category/tab_bar.dart';
 import 'package:paylater_startup/util/colors.dart';
 
-class category_screen extends StatelessWidget {
-  const category_screen({Key? key}) : super(key: key);
+class CategoryPage extends StatelessWidget{
+  const CategoryPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +14,12 @@ class category_screen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Category", style: TextStyle(color: kTextColor)),
+          title: const Text("Category", style: TextStyle(color: kTextColor)),
         ),
         body: SafeArea(
           child: SizedBox(
-            height: _height,
             width: _width,
+            height: double.infinity,
             child: const SingleChildScrollView(
               child: tab_bar(),
             ),

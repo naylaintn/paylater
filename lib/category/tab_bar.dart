@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:paylater_startup/category/category_general.dart';
+import 'package:paylater_startup/category/category_men.dart';
+import 'package:paylater_startup/category/category_women.dart';
 import 'package:paylater_startup/util/colors.dart';
 
 class tab_bar extends StatefulWidget {
@@ -19,25 +22,20 @@ class _tab_barState extends State<tab_bar> {
     return DefaultTabController(
       length: 3,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             height: 50,
             width: _width,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-            ),
-              child: const TabBar(
-                padding: EdgeInsets.only(bottom: 15),
-                  labelColor: kSecondaryColor,
+              color: scaffoldColor,
+              child: TabBar(
+                padding: EdgeInsets.all(5),
+                  labelColor: Colors.white,
                   unselectedLabelColor: kTextColor,
                   indicator: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: kSecondaryColor,
-                        width: 2,
-                      ),
-                    ),
+                    color: kPrimaryColor,
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   tabs: [
                     Tab(text: "General"),
@@ -45,65 +43,18 @@ class _tab_barState extends State<tab_bar> {
                     Tab(text: "Men"),
                   ]),
             ),
+
           SizedBox(
-            height: _height,
             width: _width,
+            height: _height,
             child: TabBarView(
                 children: [
-                  SizedBox(
-                    height: _height,
-                    child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
-                            height: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.5),
-                              borderRadius: const BorderRadius.all(Radius.circular(20)),
-                            ),
-                          );
-                        }
-                    ),
-                  ),
-                  SizedBox(
-                    height: _height,
-                    child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
-                            height: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.5),
-                              borderRadius: const BorderRadius.all(Radius.circular(20)),
-                            ),
-                          );
-                        }
-                    ),
-                  ),
-                  SizedBox(
-                    height: _height,
-                    child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                            height: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.5),
-                              borderRadius: const BorderRadius.all(Radius.circular(20)),
-                            ),
-                          );
-                        }
-                    ),
-                  ),
+                  category_general(),
+                  category_women(),
+                  category_men(),
                 ]
             ),
-          )
+          ),
         ],
       ),
     );
