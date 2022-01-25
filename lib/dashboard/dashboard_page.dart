@@ -5,10 +5,10 @@ import 'package:paylater_startup/account/account_page.dart';
 import 'package:paylater_startup/cart/cart_page.dart';
 import 'package:paylater_startup/category/category_page.dart';
 import 'package:paylater_startup/favorites/favorite_page.dart';
-import 'package:paylater_startup/home_page/home_screen.dart';
+import 'package:paylater_startup/home_page/home_page.dart';
 import 'package:paylater_startup/util/colors.dart';
 
-import 'dashboard_controller.dart';
+import '../controller/dashboard_controller.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key? key}) : super(key: key);

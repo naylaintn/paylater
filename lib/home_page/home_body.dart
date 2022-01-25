@@ -66,7 +66,7 @@ Widget HomeBody(double _width, double _height){
             ),
 
             Container(
-              height: _height*0.42,
+              height: 270,
               color: Colors.transparent,
               child: ListView.builder(
                   shrinkWrap: true,
@@ -78,7 +78,7 @@ Widget HomeBody(double _width, double _height){
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 30),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,7 +89,7 @@ Widget HomeBody(double _width, double _height){
             ),
 
             Container(
-              height: _height*0.42,
+              height: 270,
               color: Colors.transparent,
               child: ListView.builder(
                   shrinkWrap: true,
@@ -101,7 +101,7 @@ Widget HomeBody(double _width, double _height){
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 30),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -115,7 +115,7 @@ Widget HomeBody(double _width, double _height){
             ),
 
             Container(
-              height: _height*0.42,
+              height: 270,
               color: Colors.transparent,
               child: ListView.builder(
                   shrinkWrap: true,

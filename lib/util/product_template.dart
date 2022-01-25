@@ -7,35 +7,39 @@ Widget productTemplate (double _width, double _height) {
   return InkWell(
     onTap: (){Get.toNamed("/product_desc");},
     child: Container(
-      margin: EdgeInsets.fromLTRB(0, 20, 10, 20),
+      margin: EdgeInsets.fromLTRB(1, 20, 15, 20),
       child: Container(
         width: 150,
         decoration: BoxDecoration(
-          color: scaffoldColor,
-          borderRadius: BorderRadius.all(Radius.circular(5)),
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(12)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.5),
               blurRadius: 4,
-              offset: const Offset(3, 6),
+              offset: const Offset(4, 6),
             )],
         ),
+
+        ////////////////////////////////////////////////////////////////
+
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Stack(
-                children: [
-                  Container(
-                    width: 140,
-                    height: 140,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.5),
-                      borderRadius: const BorderRadius.all(Radius.circular(5)),
-                    ),
-                  ),
-                ],
+              Container(
+                margin: EdgeInsets.only(top: 5),
+                width: 140,
+                height: 140,
+                decoration: BoxDecoration(
+                  color: Colors.grey.withOpacity(0.5),
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                ),
               ),
-              SizedBox(
+
+              //////////////////////////////////////////////////////////////
+
+              Container(
+                margin: EdgeInsets.only(top: 10),
                 width: 135,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

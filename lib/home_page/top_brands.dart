@@ -17,7 +17,7 @@ Widget topBrands(double _width, double _height){
   ];
 
   return SizedBox(
-    height: _height*0.47,
+    height: 300,
     width: _width,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,

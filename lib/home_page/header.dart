@@ -19,7 +19,7 @@ Widget Header(double _width, double _height) {
     children: [
 
       AspectRatio(
-        aspectRatio: size_conf.screenSizeIndex(_width)>2?size_conf.screenSizeIndex(_width)>5?16/4:16/4:4/3,
+        aspectRatio: size_conf.screenSizeIndex(_width)>2?size_conf.screenSizeIndex(_width)>5?16/4:16/4:4.2/3,
         child: Container(
           width: _width,
           height: _height,

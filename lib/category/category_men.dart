@@ -42,8 +42,8 @@ class _category_menState extends State<category_men> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          blurRadius: 4,
-                          offset: Offset(4,6),
+                          blurRadius: 2,
+                          offset: Offset(0,4),
                         ),
                       ],
                     ),
@@ -66,7 +66,7 @@ class _category_menState extends State<category_men> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [
-                                Color(0xFF343434).withOpacity(0.3),
+                                Color(0xFF343434).withOpacity(0.4),
                                 Color(0xFF343434).withOpacity(0.15),
                               ]),
                         ),

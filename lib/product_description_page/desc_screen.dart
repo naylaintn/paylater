@@ -40,11 +40,19 @@ class productDesc_screen extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     color: kSecondaryColor,
                     onPressed: (){},
-                    child: const Text("Buy Now",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                        )),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        FaIcon(FontAwesomeIcons.shoppingCart, size: 15, color: Colors.white),
+                        SizedBox(width: 10),
+                        Text("Buy Now",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            )),
+                      ],
+                    ),
                   ),
                 ),
             ),
@@ -57,11 +65,19 @@ class productDesc_screen extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     color: kSecondaryLightColor,
                     onPressed: (){},
-                    child: const Text("Add to Wishlist",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: kSecondaryColor,
-                        )),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        FaIcon(FontAwesomeIcons.solidHeart, size: 15, color: kSecondaryColor),
+                        SizedBox(width: 10),
+                        Text("Add to Wishlist",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: kSecondaryColor,
+                            )),
+                      ],
+                    ),
                   ),
                 ),
             ),

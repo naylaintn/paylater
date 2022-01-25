@@ -13,6 +13,8 @@ class CategoryPage extends StatelessWidget{
 
     return Scaffold(
         appBar: AppBar(
+          elevation: 2,
+          backgroundColor: scaffoldColor,
           centerTitle: true,
           title: const Text("Category", style: TextStyle(color: kTextColor)),
         ),
@@ -20,8 +22,10 @@ class CategoryPage extends StatelessWidget{
           child: SizedBox(
             width: _width,
             height: double.infinity,
-            child: const SingleChildScrollView(
-              child: tab_bar(),
+            child: ListView(
+                  children: const [
+                    tab_bar(),
+                  ],
             ),
           ),
         ),
