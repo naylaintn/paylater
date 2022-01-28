@@ -20,10 +20,9 @@ class DashboardPage extends StatelessWidget {
       init: DashboardController(),
       builder: (controller) {
         return Scaffold(
+          extendBody: true,
           body: SafeArea(
-            child: Stack(
-              children: [
-                IndexedStack(
+            child: IndexedStack(
                   index: controller.tabIndex,
                   children: const [
                     homeScreen(),
@@ -33,80 +32,37 @@ class DashboardPage extends StatelessWidget {
                     accountPage(),
                   ],
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                    decoration: BoxDecoration(
-                      color: scaffoldColor,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.4),
-                          blurRadius: 10,
-                        ),
-                      ],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: BottomNavigationBar(
-                        unselectedItemColor: kTextColor,
-                        selectedItemColor: kPrimaryColor,
-                        onTap: controller.changeTabIndex,
-                        currentIndex: controller.tabIndex,
-                        showSelectedLabels: false,
-                        showUnselectedLabels: false,
-                        type: BottomNavigationBarType.fixed,
-                        backgroundColor: Colors.white,
-                        elevation: 10,
-                        items: const <BottomNavigationBarItem> [
-                          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.home), label: ""),
-                          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidHeart), label: ""),
-                          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.list), label: ""),
-                          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.shoppingCart), label: ""),
-                          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidUser), label: ""),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+          ),
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              boxShadow: [
+                BoxShadow(
+                blurRadius: 10,
+                  color: Colors.black.withOpacity(0.2),
+              ),
+              ]
+            ),
+            child: BottomNavigationBar(
+              elevation: 0,
+              unselectedItemColor: kTextColor,
+              selectedItemColor: kPrimaryColor,
+              onTap: controller.changeTabIndex,
+              currentIndex: controller.tabIndex,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: Color(0x00ffffff),
+              items: const <BottomNavigationBarItem> [
+                BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.home), label: ""),
+                BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidHeart), label: ""),
+                BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.list), label: ""),
+                BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.shoppingCart), label: ""),
+                BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidUser), label: ""),
               ],
             ),
           ),
-          // bottomNavigationBar: Container(
-          //     margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          //     decoration: BoxDecoration(
-          //       color: scaffoldColor,
-          //       borderRadius: BorderRadius.circular(20),
-          //       boxShadow: [
-          //         BoxShadow(
-          //           color: Colors.grey.withOpacity(0.4),
-          //           blurRadius: 10,
-          //         ),
-          //       ],
-          //     ),
-          //     child: ClipRRect(
-          //       borderRadius: BorderRadius.circular(20),
-          //       child: BottomNavigationBar(
-          //         unselectedItemColor: kTextColor,
-          //         selectedItemColor: kPrimaryColor,
-          //         onTap: controller.changeTabIndex,
-          //         currentIndex: controller.tabIndex,
-          //         showSelectedLabels: false,
-          //         showUnselectedLabels: false,
-          //         type: BottomNavigationBarType.fixed,
-          //         backgroundColor: Colors.white,
-          //         elevation: 10,
-          //         items: const <BottomNavigationBarItem> [
-          //           BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.home), label: ""),
-          //           BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidHeart), label: ""),
-          //           BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.list), label: ""),
-          //           BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.shoppingCart), label: ""),
-          //           BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidUser), label: ""),
-          //         ],
-          //       ),
-          //     ),
-          // ),
         );
       },
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:paylater_startup/util/balance_information.dart';
+import 'package:paylater_startup/home_page/balance_information.dart';
 import 'package:paylater_startup/util/colors.dart';
 import '../util/size_config.dart' as size_conf;
 
@@ -19,13 +19,35 @@ Widget Header(double _width, double _height) {
     children: [
 
       AspectRatio(
-        aspectRatio: size_conf.screenSizeIndex(_width)>2?size_conf.screenSizeIndex(_width)>5?16/4:16/4:4.2/3,
+        aspectRatio: size_conf.screenSizeIndex(_width)>2?size_conf.screenSizeIndex(_width)>5?16/4:16/4:4/3,
         child: Container(
           width: _width,
           height: _height,
-          decoration: const BoxDecoration(
-            color: kPrimaryColor,
-            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0,10),
+                  blurRadius: 15,
+                  color: Colors.black.withOpacity(0.3),
+                ),
+              ]
+          ),
+          child: Container(
+            width: _width,
+            height: _height,
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      kSecondaryColor.withOpacity(0.4),
+                      kSecondaryColor,
+                      kPrimaryColor,
+                    ]),
+            ),
           ),
         ),
       ),
@@ -34,79 +56,93 @@ Widget Header(double _width, double _height) {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(height: 50),
-
-          const Text("LOGO DISINI", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: 'Gilroy')),
-
-          const SizedBox(height: 10),
-
-          Wrap(
-            crossAxisAlignment: WrapCrossAlignment.center,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
-                width: _width*0.64,
-                height: 30,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                ),
-                child: const TextField(
-                  style: TextStyle(fontSize: 15),
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 14),
-                    border: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    enabledBorder: InputBorder.none,
-                    hintText: "Search Product / Brand",
-                    hintStyle: TextStyle(fontSize: 10),
-                    prefixIcon: Icon(Icons.search, color: kTextColor, size: 20),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 15, 5, 0),
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  width: 25,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0,4),
+                          blurRadius: 4,
+                          color: Colors.black.withOpacity(0.3),
+                        ),
+                      ]
                   ),
+                  child: const Icon(Icons.message, color: kTextColor, size: 15),
                 ),
               ),
-
-              SizedBox(width: _width*0.03),
-
-              Container(
-                padding: EdgeInsets.all(5),
-                width: 25,
-                height: 25,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      blurRadius: 6,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 15, 15, 0),
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  width: 25,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0,4),
+                          blurRadius: 4,
+                          color: Colors.black.withOpacity(0.3),
+                        ),
+                      ]
+                  ),
+                  child: const Icon(Icons.notifications, color: kTextColor, size: 15),
                 ),
-                child: const Icon(Icons.message, color: kTextColor, size: 15),
-              ),
-
-              SizedBox(width: _width*0.01),
-
-              Container(
-                padding: EdgeInsets.all(5),
-                width: 25,
-                height: 25,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(Icons.notifications, color: kTextColor, size: 15),
               ),
             ],
           ),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5),
-            child: Wrap(
-              alignment: WrapAlignment.spaceEvenly,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: widgetHeaders.map((widget) => headerWidget(widget)).toList(),
+          const SizedBox(height: 8),
+
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(right: 10),
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0,2),
+                              blurRadius: 4,
+                              color: Colors.black.withOpacity(0.3),
+                            ),
+                          ]
+                      ),
+                      child: Center(
+                        child: FaIcon(FontAwesomeIcons.solidUserCircle, color: Colors.white, size: 50),
+                      ),
+                    ),
+                    Text("Hello, Nayla", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                  ],
+                ),
+
+                const SizedBox(height: 25),
+
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: widgetHeaders.map((widget) => headerWidget(widget)).toList(),
+                ),
+              ],
             ),
           ),
+
+          SizedBox(height: 20),
 
           balanceInformation(_width, _height),
         ],
@@ -126,24 +162,27 @@ class widgetHeader {
 }
 
 Widget headerWidget (widgetHeader widget) {
-  return Padding(
-    padding: EdgeInsets.all(15),
-    child: Column(
+  return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          padding: EdgeInsets.all(5),
-          width: 50,
-          height: 50,
-          decoration: const BoxDecoration(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(15)),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0,4),
+                  blurRadius: 4,
+                  color: Colors.black.withOpacity(0.3),
+                ),
+              ]
           ),
-          child: Icon(widget.icon.icon, color: kTextColor, size: 17),
+          child: Icon(widget.icon.icon, color: kTextColor, size: 20),
         ),
         const SizedBox(height: 10),
-        Text(widget.title, style: const TextStyle(fontSize: 10, color: kTextColor, fontWeight: FontWeight.bold)),
+        Text(widget.title, style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold)),
       ],
-    ),
   );
 }

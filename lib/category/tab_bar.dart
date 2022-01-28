@@ -49,7 +49,7 @@ class _tab_barState extends State<tab_bar> with TickerProviderStateMixin {
                 labelColor: kTextColor,
                 unselectedLabelColor: Colors.grey.withOpacity(0.5),
                 indicator: BoxDecoration(
-                  color: kPrimaryColor,
+                  color: kColor1,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(

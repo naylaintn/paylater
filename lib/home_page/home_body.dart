@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paylater_startup/home_page/category.dart';
 import 'package:paylater_startup/home_page/promo_information.dart';
 import 'package:paylater_startup/home_page/top_brands.dart';
+import 'package:paylater_startup/util/colors.dart';
 import 'package:paylater_startup/util/product_template.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +16,37 @@ Widget HomeBody(double _width, double _height){
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
+            Container(
+              width: _width,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,4),
+                      blurRadius: 4,
+                      color: Colors.black.withOpacity(0.3),
+                    ),
+                  ]
+              ),
+              child: const TextField(
+                style: TextStyle(fontSize: 15),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 16),
+                  border: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  hintText: "Search Product / Brand",
+                  hintStyle: TextStyle(fontSize: 12),
+                  prefixIcon: Icon(Icons.search, color: kTextColor, size: 20),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 30),
+
             Text("PROMOS", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
 
             SizedBox(height: 10),
@@ -43,7 +75,7 @@ Widget HomeBody(double _width, double _height){
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("TOP BRANDS", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                Text("SHOP BY BRAND", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
                 GestureDetector(
                   onTap: (){},
                   child: Text("View All", style: TextStyle(fontSize: 10)),
@@ -51,7 +83,7 @@ Widget HomeBody(double _width, double _height){
               ],
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 20),
 
             topBrands(_width, _height),
 
@@ -126,7 +158,6 @@ Widget HomeBody(double _width, double _height){
                   }
               ),
             ),
-            const SizedBox(height: 50),
           ],
         ),
       )

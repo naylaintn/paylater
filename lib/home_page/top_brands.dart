@@ -17,7 +17,7 @@ Widget topBrands(double _width, double _height){
   ];
 
   return SizedBox(
-    height: 300,
+    height: 240,
     width: _width,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
@@ -26,21 +26,63 @@ Widget topBrands(double _width, double _height){
         return  Column(
           children: [
             Container(
-              width: 130,
-              height: 140,
+              width: 170,
+              height: 110,
               margin: const EdgeInsets.only(right: 10),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(brandData[index].image1, fit: BoxFit.cover),
+              child: Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: AssetImage(brandData[index].image1),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color(0xFF343434).withOpacity(0.4),
+                            Color(0xFF343434).withOpacity(0.15),
+                          ]),
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(
-              width: 130,
-              height: 140,
+              width: 170,
+              height: 110,
               margin: const EdgeInsets.only(right: 10, top: 10),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(brandData2[index].image2, fit: BoxFit.cover),
+              child: Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: AssetImage(brandData2[index].image2),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color(0xFF343434).withOpacity(0.4),
+                            Color(0xFF343434).withOpacity(0.15),
+                          ]),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

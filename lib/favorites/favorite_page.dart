@@ -13,10 +13,11 @@ class favoritePage extends StatelessWidget{
     double _height = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         elevation: 2,
-        backgroundColor: scaffoldColor,
+        backgroundColor: Colors.white,
         title: const Text("Wishlist", style: TextStyle(color: kTextColor)),
       ),
       body: SizedBox(
@@ -36,7 +37,6 @@ class favoritePage extends StatelessWidget{
                     }
                 ),
               ),
-              SizedBox(height: 80),
             ],
           ),
         ),

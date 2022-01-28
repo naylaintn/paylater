@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paylater_startup/home_page/header.dart';
 import 'package:paylater_startup/home_page/home_body.dart';
+import 'package:paylater_startup/util/colors.dart';
 
 class homeScreen extends StatelessWidget {
   const homeScreen({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class homeScreen extends StatelessWidget {
           width: _width,
           height: _height,
           child: SingleChildScrollView(
-            child: Wrap(
+            child: Column(
               children: [
                 Header(_width, _height),
                 HomeBody(_width, _height),

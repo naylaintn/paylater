@@ -1,20 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:paylater_startup/util/colors.dart';
 
-class favorite_template extends StatefulWidget {
-  const favorite_template({Key? key}) : super(key: key);
+class cart_template extends StatefulWidget {
+  const cart_template({Key? key}) : super(key: key);
 
   @override
-  _favorite_templateState createState() => _favorite_templateState();
+  _cart_templateState createState() => _cart_templateState();
 }
 
-class _favorite_templateState extends State<favorite_template> {
-
+class _cart_templateState extends State<cart_template> {
   @override
   Widget build(BuildContext context) {
-
     double _width = MediaQuery.of(context).size.width;
     double _height = MediaQuery.of(context).size.height;
 
@@ -25,17 +22,14 @@ class _favorite_templateState extends State<favorite_template> {
         height: 130,
         decoration: BoxDecoration(
           color: Colors.white,
-          border: Border(
-            bottom: BorderSide(color: Colors.grey.withOpacity(0.5)),
-          ),
-          // borderRadius: BorderRadius.circular(10),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.grey.withOpacity(0.5),
-          //     offset: Offset(0,4),
-          //     blurRadius: 4,
-          //   ),
-          // ]
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              offset: const Offset(0,4),
+              blurRadius: 4,
+            ),
+          ]
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -63,39 +57,33 @@ class _favorite_templateState extends State<favorite_template> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        width: 60,
+                        width: 70,
                         height: 35,
                         decoration: BoxDecoration(
-                          color: kSecondaryColor.withOpacity(0.4),
+                          color: kColor3.withOpacity(0.4),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: buildDropdownButton(),
+                        child: const Center(
+                          child: Text("Size: 36", style: TextStyle(color: kTextColor, fontSize: 12)),
+                        ),
                       ),
                       const SizedBox(width: 5),
                       Container(
-                        width: 105,
+                        width: 75,
                         height: 35,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
                         ),
-                        child: FlatButton(
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(10))),
-                          color: kSecondaryColor,
-                          onPressed: (){},
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              FaIcon(FontAwesomeIcons.cartPlus, size: 10, color: Colors.white),
-                              SizedBox(width: 5),
-                              Text("Add to Cart",
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    color: Colors.white,
-                                  )),
-                            ],
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: const [
+                            FaIcon(FontAwesomeIcons.minus, size: 12),
+                            SizedBox(width: 15),
+                            Text("1", style: TextStyle(color: kTextColor, fontSize: 13, fontWeight: FontWeight.bold)),
+                            SizedBox(width: 15),
+                            FaIcon(FontAwesomeIcons.plus, size: 12),
+                          ],
                         ),
                       ),
                       const SizedBox(width: 5),
@@ -127,42 +115,4 @@ class _favorite_templateState extends State<favorite_template> {
       ),
     );
   }
-
-  var newValue;
-  static const size = [
-    "36", "37", "38", "39", "40", "41", "42", "43", "44",
-  ];
-
-  Widget buildDropdownButton() {
-    return DropdownButtonHideUnderline(
-        child: ButtonTheme(
-          alignedDropdown: true,
-          child: DropdownButton<String>(
-            menuMaxHeight: 200,
-            iconSize: 15,
-            iconEnabledColor: kTextColor,
-            hint: Text('Size', style: TextStyle(fontSize: 10)),
-            onChanged: (changedValue) {
-              newValue = changedValue!;
-              setState(() {
-                newValue;
-                print(newValue);
-              });
-            },
-            value: newValue,
-            items: size.map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Row(
-                  children: [
-                    Text(value, style: const TextStyle(fontSize: 11)),
-                  ],
-                ),
-              );
-            }).toList(),
-          ),
-        ),
-    );
-  }
-
 }

@@ -22,22 +22,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Paylater Startup',
-      theme: ThemeData(
-        fontFamily: "Muli",
-        appBarTheme: const AppBarTheme(
-          color: Colors.transparent,
-          elevation: 0,
-          titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-          brightness: Brightness.light,
-          iconTheme: IconThemeData(color: kTextColor),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: const TextTheme(
-          bodyText1: TextStyle(color: kTextColor),
-          bodyText2: TextStyle(color: kTextColor),
-        ),
-        scaffoldBackgroundColor: scaffoldColor,
-      ),
+      theme: theme(),
       initialRoute: '/',
       defaultTransition: Transition.zoom,
       transitionDuration: const Duration(milliseconds: 1),

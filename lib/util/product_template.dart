@@ -44,18 +44,7 @@ Widget productTemplate (double _width, double _height) {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text("Product Name", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
-                        Row(
-                          children: const [
-                            FaIcon(FontAwesomeIcons.solidStar, color: kPrimaryColor, size: 11),
-                            Text("5.0", style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                      ],
-                    ),
+                    const Text("Product Name", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 5),
                     const Text("Brand", style: TextStyle(fontSize: 9, fontStyle: FontStyle.italic)),
                     const SizedBox(height: 10),

@@ -9,7 +9,7 @@ Widget promoInfo(double _width, double _height){
   ];
   
   return SizedBox(
-          height: _height*0.35,
+          height: 200,
           width: _width,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,

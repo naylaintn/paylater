@@ -38,7 +38,7 @@ class productDesc_screen extends StatelessWidget {
                   child: FlatButton(
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10))),
-                    color: kSecondaryColor,
+                    color: kPrimaryColor,
                     onPressed: (){},
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -63,18 +63,18 @@ class productDesc_screen extends StatelessWidget {
                   child: FlatButton(
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10))),
-                    color: kSecondaryLightColor,
+                    color: kSecondaryColor.withOpacity(0.4),
                     onPressed: (){},
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: const [
-                        FaIcon(FontAwesomeIcons.solidHeart, size: 15, color: kSecondaryColor),
+                        FaIcon(FontAwesomeIcons.solidHeart, size: 15, color: kPrimaryColor),
                         SizedBox(width: 10),
                         Text("Add to Wishlist",
                             style: TextStyle(
                               fontSize: 15,
-                              color: kSecondaryColor,
+                              color: kPrimaryColor,
                             )),
                       ],
                     ),
