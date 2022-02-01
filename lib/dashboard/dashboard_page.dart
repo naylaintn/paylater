@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:paylater_startup/account/account_page.dart';
+import 'package:paylater_startup/account_page/home.dart';
 import 'package:paylater_startup/cart/cart_page.dart';
 import 'package:paylater_startup/category/category_page.dart';
 import 'package:paylater_startup/favorites/favorite_page.dart';
@@ -16,6 +16,9 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     return GetBuilder<DashboardController>(
       init: DashboardController(),
       builder: (controller) {
@@ -24,12 +27,12 @@ class DashboardPage extends StatelessWidget {
           body: SafeArea(
             child: IndexedStack(
                   index: controller.tabIndex,
-                  children: const [
+                  children: [
                     homeScreen(),
                     favoritePage(),
                     CategoryPage(),
                     cartPage(),
-                    accountPage(),
+                    AccountPage(width, height),
                   ],
                 ),
           ),

@@ -24,7 +24,7 @@ Widget Header(double _width, double _height) {
           width: _width,
           height: _height,
           decoration: BoxDecoration(
-            color: Colors.white,
+            // color: Colors.white,
             borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
               boxShadow: [
                 BoxShadow(
@@ -37,15 +37,14 @@ Widget Header(double _width, double _height) {
           child: Container(
             width: _width,
             height: _height,
-            decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      kSecondaryColor.withOpacity(0.4),
+                      kColor1,
                       kSecondaryColor,
-                      kPrimaryColor,
                     ]),
             ),
           ),

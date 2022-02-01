@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:paylater_startup/account_page/body.dart';
-import 'package:paylater_startup/home_page/bottom_bar.dart';
 
 import 'header.dart';
 
@@ -28,7 +27,6 @@ class AccountPage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const bottomNavigationBar(),
     );
   }
 }

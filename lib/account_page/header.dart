@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:paylater_startup/account_page/balance.dart';
-import 'package:paylater_startup/util/balance_information.dart';
 import 'package:paylater_startup/util/colors.dart';
 import '../util/size_config.dart' as size_conf;
 
