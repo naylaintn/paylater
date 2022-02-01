@@ -21,7 +21,7 @@ class CategoryPage extends StatelessWidget{
         body: SafeArea(
           child: SizedBox(
             width: _width,
-            height: double.infinity,
+            height: _height ,
             child: ListView(
                   children: const [
                     tab_bar(),

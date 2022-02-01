@@ -7,11 +7,16 @@ Widget balanceInformation (double _width, double _height){
     width: 215,
     height: 100,
     decoration: BoxDecoration(
-      color: kColor2,
+        gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              kSecondaryColor,
+              kColor1,
+            ]),
       borderRadius: BorderRadius.all(Radius.circular(15)),
         boxShadow: [
           BoxShadow(
-            offset: Offset(0,2),
             blurRadius: 10,
             color: Colors.black.withOpacity(0.3),
           ),
@@ -28,7 +33,7 @@ Widget balanceInformation (double _width, double _height){
             alignment: Alignment.topLeft,
             child: Container(
               margin: EdgeInsets.fromLTRB(10, 10, 0, 20),
-              child: Text("Account Balance:", style: TextStyle(fontSize: 10, color: kTextColor)),
+              child: Text("Account Balance:", style: TextStyle(fontSize: 10, color: Colors.white)),
             ),
           ),
           Row(
@@ -37,9 +42,9 @@ Widget balanceInformation (double _width, double _height){
             children: [
 
 
-              const Text("Rp.15.000.000", style: TextStyle(fontSize: 20, color: kTextColor, fontWeight: FontWeight.bold)),
+              const Text("Rp.15.000.000", style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold)),
               SizedBox(width: 10),
-              FaIcon(FontAwesomeIcons.coins, size: 20, color: kTextColor),
+              FaIcon(FontAwesomeIcons.coins, size: 20, color: Colors.white),
             ],
           ),
         ],

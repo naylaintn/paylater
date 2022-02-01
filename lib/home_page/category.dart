@@ -39,7 +39,7 @@ Widget categoryList(double _width, double _height) {
                   height: 45,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: kColor1.withOpacity(0.4),
+                    color: Color(0xFFDEE652),
                   ),
                   child: Icon(categoryData[index].icon.icon, size: 15, color: kTextColor),
               ),

@@ -101,6 +101,7 @@ Widget HomeBody(double _width, double _height){
               height: 270,
               color: Colors.transparent,
               child: ListView.builder(
+                  clipBehavior: Clip.none,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
@@ -124,6 +125,7 @@ Widget HomeBody(double _width, double _height){
               height: 270,
               color: Colors.transparent,
               child: ListView.builder(
+                  clipBehavior: Clip.none,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
@@ -150,6 +152,7 @@ Widget HomeBody(double _width, double _height){
               height: 270,
               color: Colors.transparent,
               child: ListView.builder(
+                  clipBehavior: Clip.none,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,

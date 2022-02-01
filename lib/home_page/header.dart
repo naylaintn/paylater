@@ -21,35 +21,21 @@ Widget Header(double _width, double _height) {
       AspectRatio(
         aspectRatio: size_conf.screenSizeIndex(_width)>2?size_conf.screenSizeIndex(_width)>5?16/4:16/4:4/3,
         child: Container(
-          width: _width,
-          height: _height,
-          decoration: BoxDecoration(
-            // color: Colors.white,
-            borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0,10),
-                  blurRadius: 15,
-                  color: Colors.black.withOpacity(0.3),
-                ),
-              ]
-          ),
-          child: Container(
             width: _width,
             height: _height,
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
-                gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      kColor1,
-                      kSecondaryColor,
-                    ]),
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
+              color: Colors.white.withOpacity(0.85),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0,2),
+                    blurRadius: 15,
+                    color: Colors.black.withOpacity(0.3),
+                  ),
+                ]
             ),
           ),
         ),
-      ),
 
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -57,54 +43,22 @@ Widget Header(double _width, double _height) {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [
+            children: const [
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 15, 5, 0),
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                  width: 25,
-                  height: 25,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(0,4),
-                          blurRadius: 4,
-                          color: Colors.black.withOpacity(0.3),
-                        ),
-                      ]
-                  ),
-                  child: const Icon(Icons.message, color: kTextColor, size: 15),
-                ),
+                child:  Icon(Icons.message, color: kTextColor, size: 20),
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 15, 15, 0),
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                  width: 25,
-                  height: 25,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(0,4),
-                          blurRadius: 4,
-                          color: Colors.black.withOpacity(0.3),
-                        ),
-                      ]
-                  ),
-                  child: const Icon(Icons.notifications, color: kTextColor, size: 15),
+                child: Icon(Icons.notifications, color: kTextColor, size: 20),
                 ),
-              ),
             ],
           ),
 
           const SizedBox(height: 8),
 
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 20),
+            margin: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
             child: Column(
               children: [
                 Row(
@@ -113,21 +67,9 @@ Widget Header(double _width, double _height) {
                       margin: EdgeInsets.only(right: 10),
                       width: 50,
                       height: 50,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(0,2),
-                              blurRadius: 4,
-                              color: Colors.black.withOpacity(0.3),
-                            ),
-                          ]
-                      ),
-                      child: Center(
-                        child: FaIcon(FontAwesomeIcons.solidUserCircle, color: Colors.white, size: 50),
-                      ),
+                      child: FaIcon(FontAwesomeIcons.solidUserCircle, color: kTextColor, size: 50),
                     ),
-                    Text("Hello, Nayla", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                    Text("Hello, Nayla", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kTextColor)),
                   ],
                 ),
 
@@ -165,23 +107,23 @@ Widget headerWidget (widgetHeader widget) {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0,4),
-                  blurRadius: 4,
-                  color: Colors.black.withOpacity(0.3),
-                ),
-              ]
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+                color: Color(0xFFDEE652),
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0,4),
+                    blurRadius: 10,
+                    color: Colors.grey.withOpacity(0.4),
+                  ),
+                ]
+            ),
+            child: Icon(widget.icon.icon, color: kTextColor, size: 20),
           ),
-          child: Icon(widget.icon.icon, color: kTextColor, size: 20),
-        ),
         const SizedBox(height: 10),
-        Text(widget.title, style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold)),
+        Text(widget.title, style: const TextStyle(fontSize: 10, color: kTextColor, fontWeight: FontWeight.bold)),
       ],
   );
 }

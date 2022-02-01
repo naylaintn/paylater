@@ -60,7 +60,7 @@ class _cart_templateState extends State<cart_template> {
                         width: 70,
                         height: 35,
                         decoration: BoxDecoration(
-                          color: kColor3.withOpacity(0.4),
+                          color: kSecondaryColor.withOpacity(0.4),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Center(

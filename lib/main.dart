@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:paylater_startup/dashboard/dashboard_page.dart';
 import 'package:paylater_startup/product_description_page/desc_screen.dart';
+import 'package:paylater_startup/shopping_page/shopping_page.dart';
 import 'package:paylater_startup/util/colors.dart';
 import 'package:paylater_startup/util/theme.dart';
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/', page: () => MyApp()),
         GetPage(name: '/product_desc', page: () => productDesc_screen()),
         GetPage(name: '/category_screen', page: () => const CategoryPage()),
+        GetPage(name: '/shopping_screen', page: () => const shopping_page()),
       ],
       home: const DashboardPage(),
       );

@@ -49,7 +49,7 @@ class DashboardPage extends StatelessWidget {
             ),
             child: BottomNavigationBar(
               elevation: 0,
-              unselectedItemColor: kTextColor,
+              unselectedItemColor: Colors.grey.withOpacity(0.3),
               selectedItemColor: kPrimaryColor,
               onTap: controller.changeTabIndex,
               currentIndex: controller.tabIndex,
