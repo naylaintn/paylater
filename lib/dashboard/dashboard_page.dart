@@ -32,7 +32,7 @@ class DashboardPage extends StatelessWidget {
                     favoritePage(),
                     CategoryPage(),
                     cartPage(),
-                    AccountPage(width, height),
+                    AccountPage(),
                   ],
                 ),
           ),

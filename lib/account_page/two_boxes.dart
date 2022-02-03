@@ -12,6 +12,7 @@ class TwoBoxes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 21,),
       width: width * 0.8,
       height: height * 0.1,
       decoration: const BoxDecoration(
@@ -38,11 +39,11 @@ class TwoBoxes extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    FaIcon(FontAwesomeIcons.wallet, size: 9, color: kTextColor),
+                    FaIcon(FontAwesomeIcons.mailchimp, size: 9, color: kTextColor),
 
                     SizedBox(width: 15),
 
-                    Text("Account Balance", style: TextStyle(fontSize: 10, color: kTextColor)),
+                    Text("Messages", style: TextStyle(fontSize: 10, color: kTextColor)),
                   ],
                 ),
               ],
@@ -59,11 +60,11 @@ class TwoBoxes extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    FaIcon(FontAwesomeIcons.moneyBill, size: 9, color: kTextColor),
+                    FaIcon(FontAwesomeIcons.handPaper, size: 9, color: kTextColor),
 
                     SizedBox(width: 15),
 
-                    Text("PayLater Balance", style: TextStyle(fontSize: 10, color: kTextColor)),
+                    Text("Voucher", style: TextStyle(fontSize: 10, color: kTextColor)),
                   ],
                 ),
               ],

@@ -13,9 +13,9 @@ class Balance extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width * 0.8,
-      height: height * 0.2,
+      height: height * 0.16,
       decoration: const BoxDecoration(
-        color: kSecondaryLightColor,
+        color: kPrimaryColor,
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
 
@@ -38,17 +38,17 @@ class Balance extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    FaIcon(FontAwesomeIcons.wallet, size: 9, color: kTextColor),
+                    FaIcon(FontAwesomeIcons.wallet, size: 9, color: Colors.white),
 
                     SizedBox(width: 15),
 
-                    Text("Account Balance", style: TextStyle(fontSize: 10, color: kTextColor)),
+                    Text("Account Balance", style: TextStyle(fontSize: 10, color: Colors.white)),
                   ],
                 ),
 
                 SizedBox(height: 10),
 
-                const Text("Rp.15.000.000", style: TextStyle(fontSize: 15, color: kTextColor, fontWeight: FontWeight.bold)),
+                const Text("Rp.15.000.000", style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold)),
               ],
             ),
           ),
@@ -63,17 +63,17 @@ class Balance extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    FaIcon(FontAwesomeIcons.moneyBill, size: 9, color: kTextColor),
+                    FaIcon(FontAwesomeIcons.moneyBill, size: 9, color: Colors.white),
 
                     SizedBox(width: 15),
 
-                    Text("PayLater Balance", style: TextStyle(fontSize: 10, color: kTextColor)),
+                    Text("PayLater Balance", style: TextStyle(fontSize: 10, color: Colors.white)),
                   ],
                 ),
 
                 SizedBox(height: 10),
 
-                const Text("Rp.5.000.000", style: TextStyle(fontSize: 15, color: kTextColor, fontWeight: FontWeight.bold)),
+                const Text("Rp.5.000.000", style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold)),
               ],
             ),
           ),

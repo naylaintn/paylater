@@ -15,53 +15,68 @@ Widget Header(double _width, double _height) {
         child: Container(
           width: _width,
           height: _height,
-          decoration: const BoxDecoration(
-            color: kPrimaryColor,
-            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
+          decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(35), bottomRight: Radius.circular(35)),
+              color: Colors.white.withOpacity(0.85),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0,2),
+                  blurRadius: 15,
+                  color: Colors.black.withOpacity(0.3),
+                ),
+              ]
           ),
         ),
       ),
 
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: _height * 0.1),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: _height * 0.1),
 
-          Row(
-            children: [
-              const Text("NAMA", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: 'Gilroy')),
-              SizedBox(width: _width * 0.35,),
-              Container(
-                width: _width * 0.2,
-                child: const Text("NAMA", style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, fontFamily: 'Gilroy')),
-                decoration: const BoxDecoration(
-                  color: scaffoldColor,
-                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
-                )
-              )
-            ],
-          ),
+            Row(
+              children: [
+                const Text("NAMA", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: 'Gilroy')),
+                SizedBox(width: _width * 0.35,),
+                // Container(
+                //     margin: EdgeInsets.symmetric(horizontal: 30,),
+                //   child: const Text("NAMA", style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, fontFamily: 'Gilroy')),
+                //   decoration: const BoxDecoration(
+                //     color: scaffoldColor,
+                //     borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
+                //   )
+                // )
+              ],
+            ),
 
-          const Text("Verified", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: 'Gilroy')),
-          Row(
-            children:const [
-              Text("+62819181981", style: TextStyle(fontSize: 14, fontFamily: 'Gilroy')),
-              Text("|", style: TextStyle(fontSize: 14, fontFamily: 'Gilroy')),
-              Text("email@email.com", style: TextStyle(fontSize: 14, fontFamily: 'Gilroy')),
-            ]
-          ),
-          Row(
-            children: const [
-              Icon(Icons.place),
-              Text("Address", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, fontFamily: 'Gilroy')),
-            ],
-          ),
+            const Text("Verified", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, fontFamily: 'Gilroy')),
+            SizedBox(height: _height * 0.01),
+            Row(
+              children:const [
+                Text("+62819181981", style: TextStyle(fontSize: 14, fontFamily: 'Gilroy')),
+                Text("|", style: TextStyle(fontSize: 14, fontFamily: 'Gilroy')),
+                Text("email@email.com", style: TextStyle(fontSize: 14, fontFamily: 'Gilroy')),
+              ]
+            ),
+            SizedBox(height: _height * 0.03),
+            Row(
+              children: const [
+                Icon(Icons.place),
+                Text("Address", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, fontFamily: 'Gilroy')),
+              ],
+            ),
 
-          SizedBox(height: _height * 0.2),
+            SizedBox(height: _height * 0.03),
 
-          Balance(_width, _height),
-        ],
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 5,),
+                child: Balance(_width, _height)
+            ),
+          ],
+        ),
       ),
     ],
   );
