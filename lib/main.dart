@@ -3,6 +3,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:paylater_startup/dashboard/dashboard_page.dart';
+import 'package:paylater_startup/login_screen/sign_in_screen.dart';
 import 'package:paylater_startup/product_description_page/desc_screen.dart';
 import 'package:paylater_startup/shopping_page/shopping_page.dart';
 import 'package:paylater_startup/util/colors.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/category_screen', page: () => const CategoryPage()),
         GetPage(name: '/shopping_screen', page: () => const shopping_page()),
       ],
-      home: const DashboardPage(),
+      // home: const DashboardPage(),
+      home: SignInScreen(),
       );
   }
 }
