@@ -18,7 +18,7 @@ class SignForm extends StatefulWidget {
 
 class _SignFormState extends State<SignForm> {
 
-  LoginController _loginController = Get.find();
+  // LoginController _loginController = Get.find();
 
   final _formKey = GlobalKey<FormState>();
   String email = "";
