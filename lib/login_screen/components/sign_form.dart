@@ -57,13 +57,13 @@ class _SignFormState extends State<SignForm> {
                   });
                 },
               ),
-              Text("Remember me"),
+              Text("Ingat saya"),
               Spacer(),
               GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                    context, ForgotPasswordScreen.routeName),
+                onTap: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => ForgotPasswordScreen())),
                 child: Text(
-                  "Forgot Password",
+                  "Lupa Password",
                   style: TextStyle(decoration: TextDecoration.underline),
                 ),
               )
@@ -72,7 +72,7 @@ class _SignFormState extends State<SignForm> {
           FormError(errors),
           SizedBox(height: 20),
           DefaultButton(
-            text: "Continue",
+            text: "Masuk",
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
@@ -111,7 +111,7 @@ class _SignFormState extends State<SignForm> {
       },
       decoration: InputDecoration(
         labelText: "Password",
-        hintText: "Enter your password",
+        hintText: "Masukkan Password",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -144,7 +144,7 @@ class _SignFormState extends State<SignForm> {
       },
       decoration: InputDecoration(
         labelText: "Email",
-        hintText: "Enter your email",
+        hintText: "name@mailserver.com",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
