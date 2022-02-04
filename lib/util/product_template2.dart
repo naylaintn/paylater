@@ -44,7 +44,7 @@ Widget productTemplate2 (double _width, double _height) {
                     const Text("Product Name", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 5),
                     const Text("Brand", style: TextStyle(fontSize: 9, fontStyle: FontStyle.italic)),
-                    const SizedBox(height: 30),
+                    SizedBox(height: 35),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

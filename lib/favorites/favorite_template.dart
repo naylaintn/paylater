@@ -22,7 +22,7 @@ class _favorite_templateState extends State<favorite_template> {
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       child: Container(
         width: _width,
-        height: 130,
+        height: _height/6,
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(

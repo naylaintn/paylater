@@ -16,7 +16,7 @@ class CategoryPage extends StatelessWidget{
           elevation: 2,
           backgroundColor: scaffoldColor,
           centerTitle: true,
-          title: const Text("Category", style: TextStyle(color: kTextColor)),
+          title: const Text("Category", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kTextColor)),
         ),
         body: SafeArea(
           child: SizedBox(

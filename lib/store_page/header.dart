@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:paylater_startup/util/colors.dart';
@@ -51,39 +52,15 @@ class _store_headerState extends State<store_header> {
 
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 80,
-                    height: 80,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 4,
-                            offset: Offset(0, 2),
-                            color: Colors.grey.withOpacity(0.4),
-                          ),
-                        ]
-                    ),
-                    child: Center(
-                      child: FaIcon(FontAwesomeIcons.store, size: 20, color: Colors.grey.withOpacity(0.4)),
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text("BRAND NAME", style:  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                ],
-              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    width: 110,
+                    width: 130,
                     height: 30,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(7)),
@@ -113,7 +90,7 @@ class _store_headerState extends State<store_header> {
                   SizedBox(width: 10),
 
                   Container(
-                    width: 100,
+                    width: 130,
                     height: 30,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(7)),
@@ -141,6 +118,33 @@ class _store_headerState extends State<store_header> {
                   ),
                 ],
               ),
+              SizedBox(height: 20),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 4,
+                            offset: Offset(0, 2),
+                            color: Colors.grey.withOpacity(0.4),
+                          ),
+                        ]
+                    ),
+                    child: Center(
+                      child: FaIcon(FontAwesomeIcons.store, size: 20, color: Colors.grey.withOpacity(0.4)),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text("BRAND NAME", style:  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                ],
+              ),
+              SizedBox(height: 20),
             ],
           ),
         ),

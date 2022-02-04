@@ -19,9 +19,9 @@ class _product_gridState extends State<product_grid> {
       width: _width,
       height: _height,
       child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisExtent: 270,
+            childAspectRatio: 2/3,
           ),
           itemBuilder: (context, index) {
             return Padding(

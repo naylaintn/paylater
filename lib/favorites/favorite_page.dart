@@ -18,7 +18,7 @@ class favoritePage extends StatelessWidget{
         centerTitle: true,
         elevation: 2,
         backgroundColor: Colors.white,
-        title: const Text("Wishlist", style: TextStyle(color: kTextColor)),
+        title: const Text("Wishlist", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kTextColor)),
       ),
       body: SizedBox(
           width: _width,
