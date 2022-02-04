@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: _height * 0.04),
               Text(
-                "Forgot Password",
+                "Lupa Password",
                 style: TextStyle(
                   fontSize: 28,
                   color: Colors.black,
@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
                 ),
               ),
               Text(
-                "Please enter your email and we will send \nyou a link to return to your account",
+                "Masukkan email anda dan kami akan mengirim \link untuk kembali ke akun kamu",
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: _height * 0.1),
@@ -95,7 +95,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             },
             decoration: InputDecoration(
               labelText: "Email",
-              hintText: "Enter your email",
+              hintText: "name@mailserver.com",
               // If  you are using latest version of flutter then lable text and hint text shown like this
               // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,

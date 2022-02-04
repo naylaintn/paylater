@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: _height * 0.04),
                 Text(
-                  "Welcome Back",
+                  "Selamat Datang",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 28,
@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Sign in with your email and password  \nor continue with social media",
+                  "Masuk dengan email dan password kamu",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: _height * 0.08),
