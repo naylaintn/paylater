@@ -29,7 +29,7 @@ Widget Header(double _width, double _height) {
       ),
 
       Container(
-        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+        margin: EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +38,7 @@ Widget Header(double _width, double _height) {
 
             Row(
               children: [
-                const Text("NAMA", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: 'Gilroy')),
+                const Text("Nayla", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: 'Gilroy')),
                 SizedBox(width: _width * 0.35,),
                 // Container(
                 //     margin: EdgeInsets.symmetric(horizontal: 30,),
