@@ -41,7 +41,7 @@ class LoginController extends GetxController{
 
 
   var loginState = 0.obs;  // value 2 is successful login
-
+  var views = "MAIN_PAGE".obs;
 
   void submitLogin(String _uname, String _password, String roles) async {
 
