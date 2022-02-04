@@ -59,7 +59,7 @@ class success_page extends StatelessWidget {
                   child: FlatButton(
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(35))),
-                    onPressed: (){Get.toNamed("/");},
+                    onPressed: (){Get.toNamed("/home");},
                     child: Text("Done", style: TextStyle(fontSize: 20, color: kPrimaryColor)),
                   ),
                 ),

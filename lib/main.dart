@@ -10,6 +10,7 @@ import 'package:paylater_startup/store_page/store_page.dart';
 import 'package:paylater_startup/util/theme.dart';
 
 import 'category/category_page.dart';
+import 'dashboard/dashboard_page.dart';
 import 'login_screen/sign_in_screen.dart';
 
 void main() {
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       transitionDuration: const Duration(milliseconds: 1),
       getPages: [
         GetPage(name: '/', page: () => MyApp()),
+        GetPage(name: '/home', page: () => DashboardPage()),
         GetPage(name: '/product_desc', page: () => productDesc_screen()),
         GetPage(name: '/category_screen', page: () => const CategoryPage()),
         GetPage(name: '/shopping_screen', page: () => const shopping_page()),
