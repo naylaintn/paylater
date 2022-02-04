@@ -25,9 +25,9 @@ Widget HomeBody(double _width, double _height){
                 borderRadius: BorderRadius.all(Radius.circular(15)),
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0,4),
-                      blurRadius: 4,
-                      color: Colors.black.withOpacity(0.3),
+                      offset: Offset(0,2),
+                      blurRadius: 6,
+                      color: Colors.grey.withOpacity(0.4),
                     ),
                   ]
               ),
@@ -101,7 +101,7 @@ Widget HomeBody(double _width, double _height){
               height: 270,
               color: Colors.transparent,
               child: ListView.builder(
-                  clipBehavior: Clip.none,
+                  clipBehavior: Clip.antiAlias,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
@@ -125,7 +125,7 @@ Widget HomeBody(double _width, double _height){
               height: 270,
               color: Colors.transparent,
               child: ListView.builder(
-                  clipBehavior: Clip.none,
+                  clipBehavior: Clip.antiAlias,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
@@ -152,7 +152,7 @@ Widget HomeBody(double _width, double _height){
               height: 270,
               color: Colors.transparent,
               child: ListView.builder(
-                  clipBehavior: Clip.none,
+                  clipBehavior: Clip.antiAlias,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,

@@ -8,6 +8,7 @@ Widget productTemplate2 (double _width, double _height) {
     onTap: (){Get.toNamed("/product_desc");},
     child: Container(
       width: 160,
+      height: 270,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: const BorderRadius.all(Radius.circular(12)),

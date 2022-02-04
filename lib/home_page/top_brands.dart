@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 Widget topBrands(double _width, double _height){
 
@@ -25,34 +26,37 @@ Widget topBrands(double _width, double _height){
       itemBuilder: (context, index) {
         return  Column(
           children: [
-            Container(
-              width: 170,
-              height: 110,
-              margin: const EdgeInsets.only(right: 10),
-              child: Stack(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
-                        image: AssetImage(brandData[index].image1),
-                        fit: BoxFit.cover,
+            InkWell(
+              onTap: (){Get.toNamed("/store_screen");},
+              child: Container(
+                width: 170,
+                height: 110,
+                margin: const EdgeInsets.only(right: 10),
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: AssetImage(brandData[index].image1),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xFF343434).withOpacity(0.4),
-                            Color(0xFF343434).withOpacity(0.15),
-                          ]),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Color(0xFF343434).withOpacity(0.4),
+                              Color(0xFF343434).withOpacity(0.15),
+                            ]),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Container(
@@ -61,12 +65,15 @@ Widget topBrands(double _width, double _height){
               margin: const EdgeInsets.only(right: 10, top: 10),
               child: Stack(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
-                        image: AssetImage(brandData2[index].image2),
-                        fit: BoxFit.cover,
+                  InkWell(
+                    onTap: (){Get.toNamed("/store_screen");},
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: AssetImage(brandData2[index].image2),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),

@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:paylater_startup/home_page/balance_information.dart';
 import 'package:paylater_startup/util/colors.dart';
 import '../util/size_config.dart' as size_conf;
+import 'package:get/get.dart';
 
 Widget Header(double _width, double _height) {
 
@@ -107,21 +108,26 @@ Widget headerWidget (widgetHeader widget) {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-                color: Color(0xFFDEE652),
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0,4),
-                    blurRadius: 10,
-                    color: Colors.grey.withOpacity(0.4),
-                  ),
-                ]
-            ),
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
+              color: Color(0xFFDEE652),
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0,4),
+                  blurRadius: 10,
+                  color: Colors.grey.withOpacity(0.4),
+                ),
+              ]
+          ),
+          child: FlatButton(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15))),
+            onPressed: (){Get.toNamed("/verif");},
             child: Icon(widget.icon.icon, color: kTextColor, size: 20),
           ),
+        ),
         const SizedBox(height: 10),
         Text(widget.title, style: const TextStyle(fontSize: 10, color: kTextColor, fontWeight: FontWeight.bold)),
       ],
