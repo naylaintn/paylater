@@ -38,7 +38,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/verif', page: () => const payLater_Verification()),
         GetPage(name: '/verif_success', page: () => const success_page()),
       ],
-      home: const DashboardPage(),
+      // home: const DashboardPage(),
+      home: SignInScreen(),
       );
   }
 }
