@@ -19,6 +19,7 @@ class _product_gridState extends State<product_grid> {
       width: _width,
       height: _height,
       child: GridView.builder(
+        shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 2/3,

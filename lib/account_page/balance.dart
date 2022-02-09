@@ -12,11 +12,18 @@ class Balance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width * 0.8,
-      height: height * 0.16,
-      decoration: const BoxDecoration(
-        color: kPrimaryColor,
-        borderRadius: BorderRadius.all(Radius.circular(15)),
+      width: width*0.85,
+      height: height/7,
+      decoration: BoxDecoration(
+        color: kColor1,
+        borderRadius: BorderRadius.all(Radius.circular(35)),
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0,2),
+              blurRadius: 6,
+              color: Colors.black.withOpacity(0.3),
+            ),
+          ]
       ),
 
       child: Row(
@@ -25,9 +32,9 @@ class Balance extends StatelessWidget {
         children: [
           Container(
             width: width * 0.4,
-            height: height * 0.15,
+            height: height * 0.1,
             decoration: const BoxDecoration(
-              border: Border(right: BorderSide(color: Colors.white)),
+              border: Border(right: BorderSide(color: kTextColor)),
             ),
 
             child: Column(
@@ -38,23 +45,23 @@ class Balance extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    FaIcon(FontAwesomeIcons.wallet, size: 9, color: Colors.white),
+                    FaIcon(FontAwesomeIcons.wallet, size: 12, color: kTextColor),
 
                     SizedBox(width: 15),
 
-                    Text("Account Balance", style: TextStyle(fontSize: 10, color: Colors.white)),
+                    Text("Account Balance", style: TextStyle(fontSize: 12, color: kTextColor)),
                   ],
                 ),
 
                 SizedBox(height: 10),
 
-                const Text("Rp.15.000.000", style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold)),
+                const Text("Rp.15.000.000", style: TextStyle(fontSize: 17, color: kTextColor, fontWeight: FontWeight.bold)),
               ],
             ),
           ),
           SizedBox(
             width: width * 0.4,
-            height: height * 0.15,
+            height: height * 0.1,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,17 +70,17 @@ class Balance extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    FaIcon(FontAwesomeIcons.moneyBill, size: 9, color: Colors.white),
+                    FaIcon(FontAwesomeIcons.moneyBill, size: 12, color: kTextColor),
 
                     SizedBox(width: 15),
 
-                    Text("PayLater Balance", style: TextStyle(fontSize: 10, color: Colors.white)),
+                    Text("PayLater Balance", style: TextStyle(fontSize: 12, color: kTextColor)),
                   ],
                 ),
 
                 SizedBox(height: 10),
 
-                const Text("Rp.5.000.000", style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold)),
+                const Text("Rp.5.000.000", style: TextStyle(fontSize: 17, color: kTextColor, fontWeight: FontWeight.bold)),
               ],
             ),
           ),

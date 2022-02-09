@@ -15,7 +15,7 @@ class store_page extends StatelessWidget {
       body: SafeArea(
         child: SizedBox(
           width: _width,
-          height: _height,
+          height: double.maxFinite,
           child: SingleChildScrollView(
             physics: const PageScrollPhysics(),
             child: Column(

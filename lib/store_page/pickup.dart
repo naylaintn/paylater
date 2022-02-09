@@ -13,6 +13,11 @@ class store_pickUp extends StatelessWidget {
       width: _width,
       height: _height,
       child: GridView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          clipBehavior: Clip.antiAlias,
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          itemCount: 50,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisExtent: 270,

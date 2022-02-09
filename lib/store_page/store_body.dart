@@ -66,7 +66,7 @@ class _store_tabBarState extends State<store_tabBar> with TickerProviderStateMix
 
         SizedBox(
           width: _width,
-          height: _height,
+          height: _height*200,
           child: TabBarView(
               controller: _tabController,
               children: const [

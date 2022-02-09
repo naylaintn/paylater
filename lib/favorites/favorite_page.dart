@@ -23,11 +23,9 @@ class favoritePage extends StatelessWidget{
       body: SizedBox(
           width: _width,
           height: _height,
-          child: ListView(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
-                child: ListView.builder(
+          child: SingleChildScrollView(
+            child:
+              ListView.builder(
                     shrinkWrap: true,
                     physics: const ScrollPhysics(),
                     scrollDirection: Axis.vertical,
@@ -35,9 +33,7 @@ class favoritePage extends StatelessWidget{
                     itemBuilder: (context, index) {
                       return favorite_template();
                     }
-                ),
-              ),
-            ],
+                    ),
           ),
         ),
     );

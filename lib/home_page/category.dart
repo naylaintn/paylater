@@ -22,21 +22,21 @@ Widget categoryList(double _width, double _height) {
   ];
 
   return SizedBox(
-    height: 80,
+    height: _height/7,
     width: _width,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: categoryData.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                  width: 45,
-                  height: 45,
+                  width: 48,
+                  height: 48,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Color(0xFFDEE652),

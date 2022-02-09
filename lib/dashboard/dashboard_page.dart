@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:paylater_startup/account_page/home.dart';
+import 'package:paylater_startup/account/account_page.dart';
 import 'package:paylater_startup/cart/cart_page.dart';
 import 'package:paylater_startup/category/category_page.dart';
 import 'package:paylater_startup/favorites/favorite_page.dart';
@@ -32,7 +32,7 @@ class DashboardPage extends StatelessWidget {
                     favoritePage(),
                     CategoryPage(),
                     cartPage(),
-                    AccountPage(),
+                    Account_Page(),
                   ],
                 ),
           ),

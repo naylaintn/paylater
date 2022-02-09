@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
-import 'package:paylater_startup/paylater/success_page.dart';
-import 'package:paylater_startup/paylater/verification.dart';
+import 'package:paylater_startup/account/payment_method/balance/balance_screen.dart';
+import 'package:paylater_startup/account/payment_method/paylater/paylater_screen.dart';
+import 'package:paylater_startup/paylater_verification/success_page.dart';
+import 'package:paylater_startup/paylater_verification/verification.dart';
 import 'package:paylater_startup/product_description_page/desc_screen.dart';
 import 'package:paylater_startup/shopping_page/shopping_page.dart';
 import 'package:paylater_startup/store_page/store_page.dart';
@@ -39,9 +41,11 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/store_screen', page: () => const store_page()),
         GetPage(name: '/verif', page: () => const payLater_Verification()),
         GetPage(name: '/verif_success', page: () => const success_page()),
+        GetPage(name: '/balance_page', page: () => const BalanceScreen()),
+        GetPage(name: '/paylater_page', page: () => const PayLaterScreen()),
       ],
       // home: const DashboardPage(),
-      home: SignInScreen(),
+      home: DashboardPage(),
       );
   }
 }

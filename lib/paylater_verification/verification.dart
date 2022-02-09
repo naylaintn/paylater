@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:paylater_startup/paylater/ktp.dart';
-import 'package:paylater_startup/paylater/slip_gaji.dart';
-import 'package:paylater_startup/paylater/verification_form.dart';
+import 'package:paylater_startup/paylater_verification/ktp.dart';
+import 'package:paylater_startup/paylater_verification/slip_gaji.dart';
+import 'package:paylater_startup/paylater_verification/verification_form.dart';
 import 'package:paylater_startup/util/colors.dart';
 import 'package:get/get.dart';
 

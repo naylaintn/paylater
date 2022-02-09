@@ -19,10 +19,10 @@ class _favorite_templateState extends State<favorite_template> {
     double _height = MediaQuery.of(context).size.height;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
         width: _width,
-        height: _height/6,
+        height: _height/5,
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(

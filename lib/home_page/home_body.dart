@@ -45,55 +45,53 @@ Widget HomeBody(double _width, double _height){
               ),
             ),
 
-            SizedBox(height: 30),
+            SizedBox(height: _height*0.03),
 
-            Text("PROMOS", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+            Text("PROMOS", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
 
-            SizedBox(height: 10),
+            SizedBox(height: _height*0.02),
 
-            promoInfo(_width, _height),
+            promoInfo(),
 
-            SizedBox(height: 30),
+            SizedBox(height: _height*0.03),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("CATEGORY", style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                Text("CATEGORY", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 GestureDetector(
                   onTap: (){Get.toNamed("/category_screen");},
-                  child: const Text("View All", style: TextStyle(fontSize: 10)),
+                  child: const Text("See More", style: TextStyle(fontSize: 15)),
                 ),
               ],
             ),
-
-            SizedBox(height: 10),
 
             categoryList(_width, _height),
 
-            SizedBox(height: 30),
+            SizedBox(height: _height*0.03),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("SHOP BY BRAND", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                Text("SHOP BY BRAND", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 GestureDetector(
                   onTap: (){},
-                  child: Text("View All", style: TextStyle(fontSize: 10)),
+                  child: Text("See More", style: TextStyle(fontSize: 15)),
                 ),
               ],
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: _height*0.03),
 
             topBrands(_width, _height),
 
-            SizedBox(height: 30),
+            SizedBox(height: _height*0.03),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text("MOST POPULAR", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                Text("View All", style: TextStyle(fontSize: 10)),
+                Text("MOST POPULAR", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("View All", style: TextStyle(fontSize: 15)),
               ],
             ),
 
@@ -111,13 +109,13 @@ Widget HomeBody(double _width, double _height){
               ),
             ),
 
-            const SizedBox(height: 30),
+            SizedBox(height: _height*0.03),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text("TRENDING NOW", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                Text("View All", style: TextStyle(fontSize: 10)),
+                Text("TRENDING NOW", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("View All", style: TextStyle(fontSize: 15)),
               ],
             ),
 
@@ -135,15 +133,15 @@ Widget HomeBody(double _width, double _height){
               ),
             ),
 
-            const SizedBox(height: 30),
+            SizedBox(height: _height*0.03),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("SPECIAL PROMO", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                Text("SPECIAL PROMO", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 GestureDetector(
                   onTap: (){},
-                  child: Text("View All", style: TextStyle(fontSize: 10)),
+                  child: Text("View All", style: TextStyle(fontSize: 15)),
                 ),
               ],
             ),

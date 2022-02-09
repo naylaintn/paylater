@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/account_page/menu_list.dart';
+import 'package:paylater_startup/account/menu_list.dart';
 import 'package:paylater_startup/account_page/two_boxes.dart';
 
 class Body extends StatelessWidget {

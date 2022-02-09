@@ -17,7 +17,7 @@ class cartPage extends StatelessWidget{
         centerTitle: true,
         elevation: 2,
         backgroundColor: scaffoldColor,
-        title: const Text("Cart", style: TextStyle(color: kTextColor)),
+        title: const Text("Cart", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kTextColor)),
       ),
       body: SizedBox(
         width: _width,
