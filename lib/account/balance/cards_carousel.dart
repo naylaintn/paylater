@@ -20,18 +20,21 @@ class _CardsCarouselState extends State<CardsCarousel> {
 
     final cardsMockData = [
       CardDetail(
+        logo: 'Bank_BNI',
         number: '8842  2394  2399 1293',
         name: 'Emma Larsen',
         expiry: '06/22',
         background: 'assets/images/card_bg_alt.png',
       ),
       CardDetail(
+        logo: 'Bank_Mandiri',
         number: '8842  2394  2399 1294',
         name: 'Emma Larsen',
         expiry: '06/22',
         background: 'assets/images/card_bg.png',
       ),
       CardDetail(
+        logo: 'Bank_Central_Asia',
         number: '8842  2394  2399 1295',
         name: 'Emma Larsen',
         expiry: '06/22',
@@ -94,11 +97,13 @@ class CardDetail {
   final String name;
   final String expiry;
   final String background;
+  final String logo;
 
   CardDetail({
     required this.number,
     required this.name,
     required this.expiry,
     required this.background,
+    required this.logo,
   });
 }

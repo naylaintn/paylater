@@ -19,7 +19,7 @@ class _cart_templateState extends State<cart_template> {
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       child: Container(
         width: _width,
-        height: 130,
+        height: _height/5,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -37,7 +37,7 @@ class _cart_templateState extends State<cart_template> {
             children: <Widget> [
               Container(
                 width: 100,
-                height: 110,
+                height: _height*0.2,
                 decoration: BoxDecoration(
                     color: Colors.grey.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(10)
@@ -46,15 +46,20 @@ class _cart_templateState extends State<cart_template> {
               SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget> [
-                  const Text("Product Name", style:  TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
-                  const Text("Brand", style:  TextStyle(fontSize: 10, fontStyle: FontStyle.italic)),
-                  const SizedBox(height: 10),
-                  const Text("Harga", style:  TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Product Name", style:  TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                      const Text("Brand", style:  TextStyle(fontSize: 12, fontStyle: FontStyle.italic)),
+                      SizedBox(height: _height*0.01),
+                      const Text("Rp 750.000", style:  TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                    ],
+                  ),
                   Row(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         width: 70,
@@ -67,7 +72,7 @@ class _cart_templateState extends State<cart_template> {
                           child: Text("Size: 36", style: TextStyle(color: kTextColor, fontSize: 12)),
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      SizedBox(width: _width*0.03),
                       Container(
                         width: 75,
                         height: 35,
@@ -86,7 +91,7 @@ class _cart_templateState extends State<cart_template> {
                           ],
                         ),
                       ),
-                      const SizedBox(width: 5),
+                      SizedBox(width: _width*0.04),
                       Container(
                         height: 35,
                         width: 35,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/account/payment_method/paylater/bills.dart';
-import 'package:paylater_startup/account/payment_method/paylater/paylater_balance.dart';
-import 'package:paylater_startup/account/payment_method/paylater/paylater_transactions.dart';
+import 'package:paylater_startup/account/paylater/bills.dart';
+import 'package:paylater_startup/account/paylater/paylater_balance.dart';
+import 'package:paylater_startup/account/paylater/paylater_transactions.dart';
 import 'package:paylater_startup/util/colors.dart';
 
 class PayLaterScreen extends StatelessWidget {

@@ -50,11 +50,15 @@ class BankCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  SvgPicture.asset('assets/svg/visa.svg'),
-                  SvgPicture.asset(
-                    'assets/svg/more.svg',
-                    color: Colors.white,
+                  Container(
+                    width: 60,
+                    height: 30,
+                    child: SvgPicture.asset(
+                      'assets/svg/${this.cardDetail.logo}.svg',
+                      color: Colors.white,
+                    ),
                   ),
+                  SvgPicture.asset('assets/svg/visa.svg'),
                 ],
               ),
               Align(

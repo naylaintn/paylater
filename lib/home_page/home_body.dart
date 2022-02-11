@@ -17,31 +17,21 @@ Widget HomeBody(double _width, double _height){
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            Container(
-              width: _width,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0,2),
-                      blurRadius: 6,
-                      color: Colors.grey.withOpacity(0.4),
-                    ),
-                  ]
-              ),
-              child: const TextField(
-                style: TextStyle(fontSize: 15),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(vertical: 16),
-                  border: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  enabledBorder: InputBorder.none,
-                  hintText: "Search Product / Brand",
-                  hintStyle: TextStyle(fontSize: 12),
-                  prefixIcon: Icon(Icons.search, color: kTextColor, size: 20),
+            const TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(35)),
+                  borderSide: BorderSide(color: kTextColor),
+                  gapPadding: 10,
                 ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(35)),
+                  borderSide: BorderSide(color: kTextColor),
+                  gapPadding: 10,
+                ),
+                hintText: "Search Product / Brand",
+                prefixIcon: Icon(Icons.search, color: kTextColor, size: 20),
               ),
             ),
 

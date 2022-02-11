@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
-import 'package:paylater_startup/account/payment_method/balance/balance_screen.dart';
-import 'package:paylater_startup/account/payment_method/paylater/paylater_screen.dart';
+import 'package:paylater_startup/account/balance/balance_screen.dart';
+import 'package:paylater_startup/account/paylater/paylater_screen.dart';
+import 'package:paylater_startup/cart/PayNow_screen/payment_methods.dart';
+import 'package:paylater_startup/cart/payment_success.dart';
 import 'package:paylater_startup/paylater_verification/success_page.dart';
 import 'package:paylater_startup/paylater_verification/verification.dart';
 import 'package:paylater_startup/product_description_page/desc_screen.dart';
 import 'package:paylater_startup/shopping_page/shopping_page.dart';
 import 'package:paylater_startup/store_page/store_page.dart';
+import 'package:paylater_startup/util/PIN/pin_screen.dart';
 import 'package:paylater_startup/util/theme.dart';
 
 import 'category/category_page.dart';
@@ -43,6 +46,9 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/verif_success', page: () => const success_page()),
         GetPage(name: '/balance_page', page: () => const BalanceScreen()),
         GetPage(name: '/paylater_page', page: () => const PayLaterScreen()),
+        GetPage(name: '/payment_method', page: () => const PaymentMethods()),
+        GetPage(name: '/payment_success', page: () => const PaymentSuccess()),
+        GetPage(name: '/pin_screen', page: () => const PinScreen()),
       ],
       // home: const DashboardPage(),
       home: DashboardPage(),

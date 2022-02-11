@@ -37,7 +37,7 @@ class productDesc_screen extends StatelessWidget {
                   height: 40,
                   child: FlatButton(
                     shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius: BorderRadius.all(Radius.circular(35))),
                     color: kPrimaryColor,
                     onPressed: (){},
                     child: Row(
@@ -62,7 +62,7 @@ class productDesc_screen extends StatelessWidget {
                   height: 40,
                   child: FlatButton(
                     shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius: BorderRadius.all(Radius.circular(35))),
                     color: kSecondaryColor.withOpacity(0.4),
                     onPressed: (){},
                     child: Row(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:paylater_startup/account/payment_method/balance/transactions.dart';
+import 'package:paylater_startup/account/balance/transactions.dart';
 import 'package:paylater_startup/util/colors.dart';
 
 class TransactionItem extends StatelessWidget {

@@ -20,6 +20,17 @@ class _verification_formState extends State<verification_form> {
         SizedBox(height: 50),
         TextFormField(
           decoration: const InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
             labelText: "Nama Lengkap",
             hintText: "Masukkan nama lengkap sesuai KTP",
             hintStyle: TextStyle(fontSize: 12),
@@ -35,6 +46,17 @@ class _verification_formState extends State<verification_form> {
 
         TextFormField(
           decoration: const InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
             labelText: "NIK",
             hintText: "Masukkan NIK sesuai KTP",
             hintStyle: TextStyle(fontSize: 12),
@@ -50,6 +72,17 @@ class _verification_formState extends State<verification_form> {
 
         TextFormField(
           decoration: const InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
             labelText: "Tempat Lahir",
             hintText: "Masukkan tempat lahir sesuai KTP",
             hintStyle: TextStyle(fontSize: 12),
@@ -65,6 +98,17 @@ class _verification_formState extends State<verification_form> {
 
         TextFormField(
           decoration: const InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
             labelText: "Tanggal Lahir",
             hintText: "DD/MM/YYYY",
             hintStyle: TextStyle(fontSize: 12),
@@ -80,6 +124,17 @@ class _verification_formState extends State<verification_form> {
 
         TextFormField(
           decoration: const InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35)),
+              borderSide: BorderSide(color: kTextColor),
+              gapPadding: 10,
+            ),
             labelText: "BPJS Ketenagakerjaan",
             hintText: "Masukkan nomor BPJS Ketenagakerjaan",
             hintStyle: TextStyle(fontSize: 12),

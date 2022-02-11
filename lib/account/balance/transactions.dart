@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/account/payment_method/balance/transaction_design.dart';
+import 'package:paylater_startup/account/balance/transaction_design.dart';
 import 'package:paylater_startup/util/colors.dart';
 
 class Transactions extends StatefulWidget {

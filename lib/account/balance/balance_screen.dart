@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:paylater_startup/account/payment_method/balance/balance_header.dart';
-import 'package:paylater_startup/account/payment_method/balance/transactions.dart';
+import 'package:paylater_startup/account/balance/balance_header.dart';
+import 'package:paylater_startup/account/balance/transactions.dart';
 import 'package:paylater_startup/util/colors.dart';
 
 import 'cards_carousel.dart';

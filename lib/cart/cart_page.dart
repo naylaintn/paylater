@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paylater_startup/cart/add_voucher.dart';
 import 'package:paylater_startup/cart/cart_footer.dart';
 import 'package:paylater_startup/cart/cart_template.dart';
 import 'package:paylater_startup/util/colors.dart';
@@ -25,16 +26,17 @@ class cartPage extends StatelessWidget{
         child: ListView(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return cart_template();
-                  }
-              ),
+              padding: EdgeInsets.only(top: 20, bottom: 10),
+              child: AddVoucher(),
+            ),
+            ListView.builder(
+                shrinkWrap: true,
+                physics: const ScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return cart_template();
+                }
             ),
             const Align(
               alignment: Alignment.bottomCenter,
