@@ -1,19 +1,23 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:crypto/crypto.dart';
 import 'package:get/get.dart';
+import 'package:paylater_startup/controller/user_controller.dart';
 import 'package:paylater_startup/models/check_password.dart';
 import 'package:paylater_startup/models/content_data.dart';
 import 'package:paylater_startup/models/image_data.dart';
 import 'package:paylater_startup/models/user_data.dart';
 import 'package:paylater_startup/util/constants.dart';
 
-class LoginController extends GetxController{
+class AuthController extends GetxController{
 
   final _ph = ph;
   final _phDomain = domain;
+
+  UserController _user = Get.put(UserController());
 
   var check = CheckPassword(userData: UserModel(), responseCode: "919").obs;
   var showButton = RxBool(true).obs;
@@ -21,6 +25,7 @@ class LoginController extends GetxController{
   var showButton3 = RxBool(true).obs;
   var login = RxBool(false).obs;
   var imageData = ImageData().obs;
+  var userData = UserModel(responseCode: "909").obs;
 
   //======== InfoController =================================
 
@@ -36,6 +41,8 @@ class LoginController extends GetxController{
   bool imageAvailable(String key){
     return imageLength.value>0 && imageMap.containsKey(key)?true:false;
   }
+
+  UserModel get user => _user.user;
 
   //=========================================================
 
@@ -54,7 +61,7 @@ class LoginController extends GetxController{
     var url = Uri.parse(_ph + "/aut/pass");
     String json = jsonEncode(checkPass);
 
-    //print(json);
+    // print(json);
 
     try {
 
@@ -66,13 +73,30 @@ class LoginController extends GetxController{
       http.Response response = await http.post(url, body: json,
           headers: requestHeaders);
 
+      print(response.body);
+
       loginState.value = 1;
 
       //print("response : ${response.body}");
 
-      if (response.statusCode == 200) {
+      if (response.statusCode > 399) {
         check.value = CheckPassword.fromJson(jsonDecode(response.body));
-        if (check.value.responseCode=="00"){
+        login.value = RxBool(false);
+        loginState.value = 4;
+        // views.value = "SHOW_LOGIN_ERROR";
+      } else {
+
+        check.value = CheckPassword.fromJson(jsonDecode(response.body));
+        if (check.value.responseCode!="00"){
+
+          check.value = CheckPassword.fromJson(jsonDecode(response.body));
+          login.value = RxBool(false);
+          loginState.value = 3;
+
+          print(check.value.responseCode);
+          // views.value = "SHOW_LOGIN_FAIL";
+
+        } else {
           CheckUser checkPassword2 = CheckUser.fromJson(jsonDecode(response.body));
           check.value.userData = checkPassword2.userData;
           login.value = RxBool(true);
@@ -84,18 +108,7 @@ class LoginController extends GetxController{
           } else {
             // views.value = "MAIN_PAGE";
           }
-
-        } else {
-          check.value = CheckPassword.fromJson(jsonDecode(response.body));
-          login.value = RxBool(false);
-          loginState.value = 3;
-          // views.value = "SHOW_LOGIN_FAIL";
         }
-      } else {
-        check.value = CheckPassword.fromJson(jsonDecode(response.body));
-        login.value = RxBool(false);
-        loginState.value = 4;
-        // views.value = "SHOW_LOGIN_ERROR";
       }
 
     } catch (e){
@@ -108,6 +121,72 @@ class LoginController extends GetxController{
       //print(e.toString());
 
     }
+
+  }
+
+  void submitRegistration(String email, String _passRef, String _password) async {
+
+    if(_passRef != _password){
+      userData.value.responseCode="39";
+      userData.value.responseMessage="sandi tidak sama";
+      return;
+    }
+
+    RegistrationModel regModel = RegistrationModel(
+      userId: email,
+      roles: "ROLE_USER",
+    );
+
+    var passBytes = utf8.encode(_password);
+    var passDigest = sha256.convert(passBytes);
+    regModel.imei = platformType();
+    regModel.type = "SIMPLE_REG";
+    regModel.pass = passDigest.toString();
+
+    var url = Uri.parse(_ph + "/registration/simple/register");
+    String json = jsonEncode(regModel);
+
+    //print(json);
+
+    Map<String, String> requestHeaders = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+    };
+
+    try{
+
+      http.Response response = await http.post(url, body: json, headers: requestHeaders);
+
+      //print('submit reg : status ${response.statusCode} : ${response.body}');
+
+      if(response.statusCode!=200){
+        // regState.value = 3;
+        userData.value.responseCode=response.statusCode.toString();
+        userData.value.responseMessage= "I'm sorry there's an error on our part, please try again";
+        views.value = "REG_FAIL";
+        Get.snackbar("Failed to Register", userData.value.responseMessage, snackPosition: SnackPosition.BOTTOM);
+      } else {
+        userData.value = UserModel.fromJson(jsonDecode(response.body));
+        if(userData.value.responseCode!='00'){
+          // regState.value = 1;
+          views.value = "REG_FAIL";
+          Get.snackbar("Failed to Register", userData.value.responseMessage, snackPosition: SnackPosition.BOTTOM);
+          // _loginController.views.value = "MAIN_PAGE_OFF";
+        } else {
+          // regState.value = 2;
+          views.value = "REG_SUCCESS";
+        }
+      }
+
+    } catch(e){
+      // regState.value = 4;
+      userData.value.responseCode="403";
+      userData.value.responseMessage= "Error : " + e.toString();
+      views.value = "REG_ERROR";
+      Get.snackbar("Failed to Register", userData.value.responseMessage, snackPosition: SnackPosition.BOTTOM);
+    }
+
+
 
   }
 
@@ -145,6 +224,28 @@ class LoginController extends GetxController{
     } catch(e){
       imageData.value = ImageData(name:"NA", content: e.toString());
       //print("error : ${e.toString()}");
+    }
+
+  }
+
+  String platformType(){
+
+    if (kIsWeb) {
+      return "web";
+    } else {
+      if (Platform.isAndroid) {
+        return "android";
+      } else if (Platform.isIOS) {
+        return "ios";
+      } else if (Platform.isLinux) {
+        return "linux";
+      } else if (Platform.isMacOS) {
+        return "macos";
+      } else if (Platform.isWindows) {
+        return "window";
+      } else {
+        return "not known";
+      }
     }
 
   }

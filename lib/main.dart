@@ -6,6 +6,7 @@ import 'package:paylater_startup/account/balance/balance_screen.dart';
 import 'package:paylater_startup/account/paylater/paylater_screen.dart';
 import 'package:paylater_startup/cart/PayNow_screen/payment_methods.dart';
 import 'package:paylater_startup/cart/payment_success.dart';
+import 'package:paylater_startup/controller/root.dart';
 import 'package:paylater_startup/paylater_verification/success_page.dart';
 import 'package:paylater_startup/paylater_verification/verification.dart';
 import 'package:paylater_startup/product_description_page/desc_screen.dart';
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/pin_screen', page: () => const PinScreen()),
       ],
       // home: const DashboardPage(),
-      home: DashboardPage(),
+      home: Root(),
       );
   }
 }
