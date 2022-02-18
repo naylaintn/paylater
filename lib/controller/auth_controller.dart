@@ -34,6 +34,7 @@ class AuthController extends GetxController{
   var dataLength = 0.obs;
   var imageLength = 0.obs;
 
+
   bool dataAvailable(String key){
     return dataLength.value>0 && contentDataMap.containsKey(key)?true:false;
   }
@@ -93,7 +94,7 @@ class AuthController extends GetxController{
           login.value = RxBool(false);
           loginState.value = 3;
 
-          print(check.value.responseCode);
+          // print(check.value.responseCode);
           // views.value = "SHOW_LOGIN_FAIL";
 
         } else {
@@ -103,11 +104,13 @@ class AuthController extends GetxController{
 
           _getUserAvatar(_uname, check.value.token);
           loginState.value = 2;
-          if(!check.value.userData.accountNonExpired){
+          userData.value = checkPassword2.userData;
+          _user.user = userData.value;
+          /*if(!check.value.userData.accountNonExpired){
             // views.value = "CHANGE_PWD_VIEW";
           } else {
             // views.value = "MAIN_PAGE";
-          }
+          }*/
         }
       }
 
@@ -157,24 +160,24 @@ class AuthController extends GetxController{
 
       http.Response response = await http.post(url, body: json, headers: requestHeaders);
 
-      //print('submit reg : status ${response.statusCode} : ${response.body}');
+      print('submit reg : status ${response.statusCode} : ${response.body}');
 
       if(response.statusCode!=200){
         // regState.value = 3;
         userData.value.responseCode=response.statusCode.toString();
         userData.value.responseMessage= "I'm sorry there's an error on our part, please try again";
-        views.value = "REG_FAIL";
+        // views.value = "REG_FAIL";
         Get.snackbar("Failed to Register", userData.value.responseMessage, snackPosition: SnackPosition.BOTTOM);
       } else {
         userData.value = UserModel.fromJson(jsonDecode(response.body));
         if(userData.value.responseCode!='00'){
           // regState.value = 1;
-          views.value = "REG_FAIL";
+          // views.value = "REG_FAIL";
           Get.snackbar("Failed to Register", userData.value.responseMessage, snackPosition: SnackPosition.BOTTOM);
           // _loginController.views.value = "MAIN_PAGE_OFF";
         } else {
-          // regState.value = 2;
-          views.value = "REG_SUCCESS";
+          _user.user = userData.value;
+          Get.back();
         }
       }
 

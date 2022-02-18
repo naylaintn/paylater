@@ -8,12 +8,18 @@ import 'package:paylater_startup/login_screen/sign_in_screen.dart';
 class Root extends GetWidget<AuthController>{
   @override
   Widget build(BuildContext context) {
-    return GetX(
+
+    // print("error di mana 1");
+
+    return GetX<AuthController>(
       initState: (_) async {
+        // print("error di mana 2");
         Get.put<UserController>(UserController());
       },
       builder: (_) {
-        if (Get.find<AuthController>().user.userId != "") {
+        // print("error di mana 3");
+        // print(Get.find<AuthController>().user.userId.isNotEmpty);
+        if (Get.find<AuthController>().user.userId.isNotEmpty) {
           return DashboardPage();
         } else {
           return SignInScreen();

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:paylater_startup/controller/auth_controller.dart';
 import 'package:paylater_startup/login_screen/components/custom_surfix_icon.dart';
 import 'package:paylater_startup/login_screen/components/default_button.dart';
 import 'package:paylater_startup/login_screen/components/form_error.dart';
@@ -17,6 +20,8 @@ class _SignUpFormState extends State<SignUpForm> {
   String confirmPassword = "";
   bool remember = false;
   final List<String> errors = [];
+
+  AuthController _authController = Get.put(AuthController());
 
   void addError({required String error}) {
     if (!errors.contains(error))
@@ -50,6 +55,9 @@ class _SignUpFormState extends State<SignUpForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+
+                _authController.submitRegistration(email, password, confirmPassword);
+
                 // if all are valid then go to success screen
                 // Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
