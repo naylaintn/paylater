@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/account/menu_list_item.dart';
+import 'package:get/get.dart';
 
 class MenuList extends StatelessWidget {
 
@@ -29,15 +29,61 @@ class MenuList extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MenuListItem(Icons.settings, "SETTINGS"),
-              // SizedBox(height: height * 0.03,),
-              MenuListItem(Icons.article_rounded, "BILLS"),
-              // SizedBox(height: height * 0.03,),
-              MenuListItem(Icons.history, "TRANSACTION HISTORY"),
-              // SizedBox(height: height * 0.03,),
-              MenuListItem(Icons.bookmark, "BOOKINGS"),
-              // SizedBox(height: height * 0.03,),
-              MenuListItem(Icons.person_outline_outlined, "CUSTOMER SERVICE"),
+              GestureDetector(
+                onTap: (){Get.toNamed("/settings_page");},
+                child: Row(
+                  children: [
+                    Icon(Icons.settings),
+                    SizedBox(width: 5,),
+                    Text("SETTINGS"),
+                  ],
+                ),
+              ),
+
+
+              GestureDetector(
+                child: Row(
+                  children: [
+                    Icon(Icons.article_rounded),
+                    SizedBox(width: 5,),
+                    Text("BILLS"),
+                  ],
+                ),
+              ),
+
+
+              GestureDetector(
+                onTap: (){Get.toNamed("/TransactionHistory_page");},
+                child: Row(
+                  children: [
+                    Icon(Icons.history),
+                    SizedBox(width: 5,),
+                    Text("TRANSACTION HISTORY"),
+                  ],
+                ),
+              ),
+
+
+              GestureDetector(
+                child: Row(
+                  children: [
+                    Icon(Icons.bookmark),
+                    SizedBox(width: 5,),
+                    Text("BOOKINGS"),
+                  ],
+                ),
+              ),
+
+
+              GestureDetector(
+                child: Row(
+                  children: [
+                    Icon(Icons.person_outline_outlined),
+                    SizedBox(width: 5,),
+                    Text("CUSTOMER SERVICE"),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

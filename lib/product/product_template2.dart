@@ -3,16 +3,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:paylater_startup/util/colors.dart';
 import 'package:get/get.dart';
 
-Widget productTemplate (double _width, double _height) {
-  return InkWell(
+Widget productTemplate2 (double _width, double _height) {
+  return GestureDetector(
     onTap: (){Get.toNamed("/product_desc");},
     child: Container(
-      margin: EdgeInsets.fromLTRB(0, 20, 10, 10),
-      child: Container(
-        width: 150,
+      width: 160,
+      height: 270,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(12)),
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.5),
@@ -28,7 +27,7 @@ Widget productTemplate (double _width, double _height) {
           child: Column(
             children: [
               Container(
-                height: 150,
+                height: 160,
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.5),
                   borderRadius: const BorderRadius.all(Radius.circular(12)),
@@ -43,9 +42,8 @@ Widget productTemplate (double _width, double _height) {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text("Product Name", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
-                    const SizedBox(height: 5),
                     const Text("Brand", style: TextStyle(fontSize: 9, fontStyle: FontStyle.italic)),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 35),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -60,6 +58,5 @@ Widget productTemplate (double _width, double _height) {
           ),
         ),
         ),
-      ),
   );
 }

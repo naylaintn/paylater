@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/category/category_general.dart';
-import 'package:paylater_startup/category/category_men.dart';
-import 'package:paylater_startup/category/category_women.dart';
+import 'package:paylater_startup/category/product_category.dart';
+import 'package:paylater_startup/category/service_category.dart';
 import 'package:paylater_startup/util/colors.dart';
 
 class tab_bar extends StatefulWidget {
@@ -17,7 +16,7 @@ class _tab_barState extends State<tab_bar> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: 3);
+    _tabController = TabController(vsync: this, length: 2);
     super.initState();
   }
 
@@ -60,9 +59,8 @@ class _tab_barState extends State<tab_bar> with TickerProviderStateMixin {
                   ]
                 ),
                 tabs: const [
-                  Tab(text: "General"),
-                  Tab(text: "Women"),
-                  Tab(text: "Men"),
+                  Tab(text: "Product"),
+                  Tab(text: "Experience"),
                 ]),
           ),
 
@@ -72,9 +70,8 @@ class _tab_barState extends State<tab_bar> with TickerProviderStateMixin {
             child: TabBarView(
                 controller: _tabController,
                 children: const [
-                  category_general(),
-                  category_women(),
-                  category_men(),
+                  ProductCategory(),
+                  ServiceCategory(),
                 ]
             ),
           ),

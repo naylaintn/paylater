@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/store_page/delivery.dart';
-import 'package:paylater_startup/store_page/pickup.dart';
+import 'package:paylater_startup/product/shopping_page/product_grid.dart';
 import 'package:paylater_startup/util/colors.dart';
 
-class store_tabBar extends StatefulWidget {
-  const store_tabBar({Key? key}) : super(key: key);
+class tab_bar2 extends StatefulWidget {
+  const tab_bar2({Key? key}) : super(key: key);
 
   @override
-  _store_tabBarState createState() => _store_tabBarState();
+  _tab_bar2State createState() => _tab_bar2State();
 }
 
-class _store_tabBarState extends State<store_tabBar> with TickerProviderStateMixin {
-
-  late TabController _tabController;
+class _tab_bar2State extends State<tab_bar2> with TickerProviderStateMixin {
+  late TabController tabController;
 
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: 2);
+    tabController = TabController(vsync: this, length: 6);
     super.initState();
   }
 
   @override
   void dispose() {
-    _tabController.dispose();
+    tabController.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +31,7 @@ class _store_tabBarState extends State<store_tabBar> with TickerProviderStateMix
     double _height = MediaQuery.of(context).size.height;
 
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -43,7 +41,8 @@ class _store_tabBarState extends State<store_tabBar> with TickerProviderStateMix
             color: scaffoldColor,
           ),
           child: TabBar(
-              controller: _tabController,
+            isScrollable: true,
+              controller: tabController,
               padding: const EdgeInsets.all(5),
               labelColor: kTextColor,
               unselectedLabelColor: Colors.grey.withOpacity(0.5),
@@ -59,19 +58,27 @@ class _store_tabBarState extends State<store_tabBar> with TickerProviderStateMix
                   ]
               ),
               tabs: const [
-                Tab(text: "Delivery"),
-                Tab(text: "Pick Up"),
+                Tab(text: "All"),
+                Tab(text: "Category 1"),
+                Tab(text: "Category 2"),
+                Tab(text: "Category 3"),
+                Tab(text: "Category 4"),
+                Tab(text: "Category 5"),
               ]),
         ),
 
         SizedBox(
           width: _width,
-          height: _height*200,
+          height: _height,
           child: TabBarView(
-              controller: _tabController,
+              controller: tabController,
               children: const [
-                store_delivery(),
-                store_pickUp(),
+                product_grid(),
+                product_grid(),
+                product_grid(),
+                product_grid(),
+                product_grid(),
+                product_grid(),
               ]
           ),
         ),
@@ -79,3 +86,4 @@ class _store_tabBarState extends State<store_tabBar> with TickerProviderStateMix
     );
   }
 }
+

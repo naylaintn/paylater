@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/util/product_template2.dart';
+import 'package:paylater_startup/product/product_template2.dart';
 
 class store_pickUp extends StatelessWidget {
   const store_pickUp({Key? key}) : super(key: key);

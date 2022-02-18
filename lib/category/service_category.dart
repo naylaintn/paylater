@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class category_men extends StatefulWidget {
-  const category_men({Key? key}) : super(key: key);
+class ServiceCategory extends StatefulWidget {
+  const ServiceCategory({Key? key}) : super(key: key);
 
   @override
-  _category_menState createState() => _category_menState();
+  _ServiceCategoryState createState() => _ServiceCategoryState();
 }
 
-class _category_menState extends State<category_men> {
+class _ServiceCategoryState extends State<ServiceCategory> {
   @override
   Widget build(BuildContext context) {
-
     final myImageAndCaption = [
-      ["assets/images/clothes.jpg", "Clothes"],
-      ["assets/images/accessories.jpg", "Accessories"],
-      ["assets/images/bag.jpg", "Bags"],
-      ["assets/images/shoes.jpg", "Shoes"],
-      ["assets/images/gaming2.jpg", "Gaming"],
+      ["assets/images/dermatologist.jpg", "Dermatologist"],
+      ["assets/images/dentist.jpg", "Dentist"],
+      ["assets/images/estheticiant.jpg", "Esthetician"],
+      ["assets/images/spa.jpg", "Spa & Massages"],
+      ["assets/images/salon.jpg", "Salon"],
+      ["assets/images/barber.jpg", "Barber"],
+      ["assets/images/beauty_service.jpg", "Beauty Specialist"],
+      ["assets/images/beauty_class.jpg", "Beauty Class"],
     ];
 
     double _width = MediaQuery.of(context).size.width;
@@ -29,7 +31,7 @@ class _category_menState extends State<category_men> {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         child: InkWell(
-          onTap: (){Get.toNamed("/shopping_screen");},
+          onTap: (){Get.toNamed("/service_screen");},
           child: GridView.count(
             physics: const ScrollPhysics(),
             scrollDirection: Axis.vertical,

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:paylater_startup/product_description_page/desc_body.dart';
 import 'package:paylater_startup/util/colors.dart';
+
+import 'desc_body.dart';
 
 class productDesc_screen extends StatelessWidget {
 

@@ -28,14 +28,6 @@ class _favorite_templateState extends State<favorite_template> {
           border: Border(
             bottom: BorderSide(color: Colors.grey.withOpacity(0.5)),
           ),
-          // borderRadius: BorderRadius.circular(10),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.grey.withOpacity(0.5),
-          //     offset: Offset(0,4),
-          //     blurRadius: 4,
-          //   ),
-          // ]
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),

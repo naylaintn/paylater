@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/store_page/header.dart';
-import 'package:paylater_startup/store_page/store_body.dart';
+import 'package:paylater_startup/product/store_page/store_body.dart';
+
+import 'header.dart';
 
 class store_page extends StatelessWidget {
   const store_page({Key? key}) : super(key: key);

@@ -17,9 +17,11 @@ Widget productDesc_body (double _width, double _height) {
             ),
           ),
         ),
-        const SizedBox(height: 20),
-        SizedBox(
-          width: _width*0.88,
+        SizedBox(height: _height*0.02),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          width: _width,
+          height: _height,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -32,12 +34,12 @@ Widget productDesc_body (double _width, double _height) {
                 fontSize: 12,
                 fontStyle: FontStyle.italic,
               )),
-              const SizedBox(height: 10),
-              const Text("Rp. 5.000.000", style: TextStyle(
+              SizedBox(height: _height*0.01),
+              const Text("Rp 5.000.000", style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
               )),
-              const SizedBox(height: 20),
+              SizedBox(height: _height*0.02),
               const Text("Color",
                   style: TextStyle(
                     fontSize: 12,
@@ -62,13 +64,13 @@ Widget productDesc_body (double _width, double _height) {
                   },
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: _height*0.01),
               const Text("Size",
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                   )),
-              const SizedBox(height: 10),
+              SizedBox(height: _height*0.01),
               SizedBox(
                 width: _width,
                 height: 25,
@@ -88,16 +90,16 @@ Widget productDesc_body (double _width, double _height) {
                   },
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: _height*0.02),
               const Text("Description",
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                   )),
-              const SizedBox(height: 10),
+              SizedBox(height: _height*0.01),
               Container(
                 height: _height*0.2,
-                width: _width*0.88,
+                width: _width,
                 child: const Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
                     style: TextStyle(
                       fontSize: 12,

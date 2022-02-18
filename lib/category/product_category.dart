@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class category_women extends StatefulWidget {
-  const category_women({Key? key}) : super(key: key);
+class ProductCategory extends StatefulWidget {
+  const ProductCategory({Key? key}) : super(key: key);
 
   @override
-  _category_womenState createState() => _category_womenState();
+  _ProductCategoryState createState() => _ProductCategoryState();
 }
 
-class _category_womenState extends State<category_women> {
+class _ProductCategoryState extends State<ProductCategory> {
   @override
   Widget build(BuildContext context) {
-
     final myImageAndCaption = [
       ["assets/images/clothes2.jpg", "Clothes"],
       ["assets/images/accessories2.jpg", "Accessories"],
@@ -95,7 +94,7 @@ class _category_womenState extends State<category_women> {
               ),
             ],
           ),
-        )
+        ),
       ),
     );
   }

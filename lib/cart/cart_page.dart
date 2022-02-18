@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:paylater_startup/cart/add_voucher.dart';
 import 'package:paylater_startup/cart/cart_footer.dart';
 import 'package:paylater_startup/cart/cart_template.dart';
+import 'package:paylater_startup/cart/cart_template_pickup.dart';
 import 'package:paylater_startup/util/colors.dart';
 
 class cartPage extends StatelessWidget{
@@ -33,7 +34,16 @@ class cartPage extends StatelessWidget{
                 shrinkWrap: true,
                 physics: const ScrollPhysics(),
                 scrollDirection: Axis.vertical,
-                itemCount: 4,
+                itemCount: 2,
+                itemBuilder: (context, index) {
+                  return TemplatePickUp();
+                }
+            ),
+            ListView.builder(
+                shrinkWrap: true,
+                physics: const ScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                itemCount: 3,
                 itemBuilder: (context, index) {
                   return cart_template();
                 }

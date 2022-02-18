@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:paylater_startup/home_page/category.dart';
 import 'package:paylater_startup/home_page/promo_information.dart';
-import 'package:paylater_startup/home_page/top_brands.dart';
+import 'package:paylater_startup/home_page/top_brands_product.dart';
+import 'package:paylater_startup/home_page/top_brands_service.dart';
+import 'package:paylater_startup/service/template_service/service_template.dart';
 import 'package:paylater_startup/util/colors.dart';
-import 'package:paylater_startup/util/product_template.dart';
+import 'package:paylater_startup/product/product_template.dart';
 import 'package:get/get.dart';
 
 Widget HomeBody(double _width, double _height){
@@ -45,18 +47,26 @@ Widget HomeBody(double _width, double _height){
 
             SizedBox(height: _height*0.03),
 
+            Text("CATEGORY", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+
+            categoryList(_width, _height),
+
+            SizedBox(height: _height*0.03),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("CATEGORY", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("BOOK BY BRAND", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 GestureDetector(
-                  onTap: (){Get.toNamed("/category_screen");},
-                  child: const Text("See More", style: TextStyle(fontSize: 15)),
+                  onTap: (){},
+                  child: Text("See More", style: TextStyle(fontSize: 15)),
                 ),
               ],
             ),
 
-            categoryList(_width, _height),
+            SizedBox(height: _height*0.03),
+
+            TopBrandsService(_width,_height),
 
             SizedBox(height: _height*0.03),
 
@@ -80,7 +90,7 @@ Widget HomeBody(double _width, double _height){
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text("MOST POPULAR", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("MOST POPULAR PRODUCT", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 Text("View All", style: TextStyle(fontSize: 15)),
               ],
             ),
@@ -104,7 +114,31 @@ Widget HomeBody(double _width, double _height){
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text("TRENDING NOW", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("MOST POPULAR SERVICE", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("View All", style: TextStyle(fontSize: 15)),
+              ],
+            ),
+
+            Container(
+              height: 270,
+              color: Colors.transparent,
+              child: ListView.builder(
+                  clipBehavior: Clip.antiAlias,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return ServiceTemplate();
+                  }
+              ),
+            ),
+
+            SizedBox(height: _height*0.03),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text("TRENDING PRODUCT", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 Text("View All", style: TextStyle(fontSize: 15)),
               ],
             ),
@@ -128,7 +162,7 @@ Widget HomeBody(double _width, double _height){
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("SPECIAL PROMO", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("TRENDING BEAUTY SERVICE", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 GestureDetector(
                   onTap: (){},
                   child: Text("View All", style: TextStyle(fontSize: 15)),
@@ -145,7 +179,7 @@ Widget HomeBody(double _width, double _height){
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return productTemplate(_width, _height);
+                    return ServiceTemplate();
                   }
               ),
             ),

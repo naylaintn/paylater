@@ -1,65 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:paylater_startup/util/colors.dart';
+import 'package:get/get.dart';
 
 Widget categoryList(double _width, double _height) {
 
-  List<categoryInformation> categoryData = [
-    categoryInformation(title: "All", icon: const FaIcon(FontAwesomeIcons.store)),
-    categoryInformation(title: "Food", icon: const FaIcon(FontAwesomeIcons.utensils)),
-    categoryInformation(title: "Clothes", icon: const FaIcon(FontAwesomeIcons.tshirt)),
-    categoryInformation(title: "Bags", icon: const FaIcon(FontAwesomeIcons.shoppingBag)),
-    categoryInformation(title: "Make Up", icon: const FaIcon(FontAwesomeIcons.heart)),
-    categoryInformation(title: "Beauty", icon: const FaIcon(FontAwesomeIcons.grinHearts)),
-    categoryInformation(title: "Shoes", icon: const FaIcon(FontAwesomeIcons.shoePrints)),
-    categoryInformation(title: "Accessories", icon: const FaIcon(FontAwesomeIcons.ring)),
-    categoryInformation(title: "Interior", icon: const FaIcon(FontAwesomeIcons.couch)),
-    categoryInformation(title: "Mobile", icon: const FaIcon(FontAwesomeIcons.mobile)),
-    categoryInformation(title: "Electronic", icon: const FaIcon(FontAwesomeIcons.tv)),
-    categoryInformation(title: "Camera", icon: const FaIcon(FontAwesomeIcons.cameraRetro)),
-    categoryInformation(title: "Gaming", icon: const FaIcon(FontAwesomeIcons.gamepad)),
-    categoryInformation(title: "Plants", icon: const FaIcon(FontAwesomeIcons.tree)),
-  ];
-
-  return SizedBox(
-    height: _height/7,
+  return Container(
+    margin: EdgeInsets.symmetric(vertical: 10),
     width: _width,
-    child: ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: categoryData.length,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(right: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                  width: 48,
-                  height: 48,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFFDEE652),
-                  ),
-                  child: Icon(categoryData[index].icon.icon, size: 15, color: kTextColor),
+    height: _height*0.1,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: (){Get.toNamed("/category_screen");},
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+              width: _width/2,
+              height: _height*0.1,
+              decoration: BoxDecoration(
+                color: kSecondaryColor.withOpacity(0.1),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
-              const SizedBox(height: 5),
-              Text(categoryData[index].title, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
-            ],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 25,
+                    height: 25,
+                    child: SvgPicture.asset("assets/svg/store.svg", color: kPrimaryColor),
+                  ),
+
+                  Text("Online Store", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kPrimaryColor)),
+                ],
+              ),
+            ),
           ),
-        );
-      },
+        ),
+        SizedBox(width: _width*0.01),
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            width: _width/2,
+            height: _height*0.1,
+            decoration: BoxDecoration(
+              color: kSecondaryColor.withOpacity(0.1),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 20,
+                  height: 20,
+                  child: SvgPicture.asset("assets/svg/service.svg", color: kPrimaryColor),
+                ),
+                Text("Experience", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kPrimaryColor)),
+              ],
+            ),
+          ),
+        ),
+      ],
     ),
   );
-}
-
-class categoryInformation {
-  String title;
-  FaIcon icon;
-
-  categoryInformation({
-    this.title="",
-    this.icon = const FaIcon(FontAwesomeIcons.graduationCap),
-  });
-
 }

@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/util/product_template2.dart';
+import 'package:paylater_startup/product/product_template2.dart';
 
-class product_grid extends StatefulWidget {
-  const product_grid({Key? key}) : super(key: key);
+class store_delivery extends StatelessWidget {
+  const store_delivery({Key? key}) : super(key: key);
 
-  @override
-  _product_gridState createState() => _product_gridState();
-}
-
-class _product_gridState extends State<product_grid> {
   @override
   Widget build(BuildContext context) {
 
@@ -19,10 +14,14 @@ class _product_gridState extends State<product_grid> {
       width: _width,
       height: _height,
       child: GridView.builder(
-        shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        physics: NeverScrollableScrollPhysics(),
+       clipBehavior: Clip.antiAlias,
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          itemCount: 50,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 2/3,
+            mainAxisExtent: 270,
           ),
           itemBuilder: (context, index) {
             return Padding(
