@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paylater_startup/controller/login_controller.dart';
+import 'package:paylater_startup/controller/auth_controller.dart';
 import 'package:paylater_startup/dashboard/dashboard_page.dart';
 import 'package:paylater_startup/forgot_password/forgot_password_screen.dart';
 import 'package:paylater_startup/util/colors.dart';
@@ -18,7 +18,7 @@ class SignForm extends StatefulWidget {
 
 class _SignFormState extends State<SignForm> {
 
-  // LoginController _loginController = Get.find();
+  AuthController _authController = Get.put(AuthController());
 
   final _formKey = GlobalKey<FormState>();
   String email = "";
@@ -80,11 +80,12 @@ class _SignFormState extends State<SignForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                // _loginController.submitLogin(email, password, "ROLE_USER");
-                // _loginController.views.value = 'LOGIN_ONGOING';
+                _authController.submitLogin(email, password, "ROLE_USER");
+                _authController.views.value = 'LOGIN_ONGOING';
                 // if all are valid then go to success screen
+
                 KeyboardUtil.hideKeyboard(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardPage()));
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardPage()));
               }
             },
           ),
