@@ -7,7 +7,7 @@ import 'package:paylater_startup/util/colors.dart';
 
 import '../util/size_config.dart' as size_conf;
 
-Widget Header(double _width, double _height) {
+Widget Header(double _width, double _height, String name) {
 
   List<widgetHeader> widgetHeaders = [
     widgetHeader(title: "Pay", icon: FaIcon(FontAwesomeIcons.arrowUp)),
@@ -71,7 +71,7 @@ Widget Header(double _width, double _height) {
                       height: 50,
                       child: FaIcon(FontAwesomeIcons.solidUserCircle, color: kTextColor, size: 50),
                     ),
-                    Text("Hello, Nayla", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kTextColor)),
+                    Text("Hello, $name", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kTextColor)),
                   ],
                 ),
 
