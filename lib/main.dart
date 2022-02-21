@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_getx_widget.dart';
 import 'package:paylater_startup/account/balance/balance_screen.dart';
 import 'package:paylater_startup/account/paylater/paylater_screen.dart';
 import 'package:paylater_startup/account/settings/settings_screen.dart';
 import 'package:paylater_startup/cart/PayNow_screen/payment_methods.dart';
 import 'package:paylater_startup/cart/payment_success.dart';
-import 'package:paylater_startup/controller/auth_controller.dart';
 import 'package:paylater_startup/controller/bindings/auth_binding.dart';
 import 'package:paylater_startup/controller/root.dart';
 import 'package:paylater_startup/paylater_verification/success_page.dart';
@@ -25,9 +21,7 @@ import 'package:paylater_startup/util/theme.dart';
 
 import 'account/transaction_history/transaction_screen.dart';
 import 'category/category_page.dart';
-import 'controller/user_controller.dart';
 import 'dashboard/dashboard_page.dart';
-import 'login_screen/sign_in_screen.dart';
 
 void main() {
   runApp(MyApp());

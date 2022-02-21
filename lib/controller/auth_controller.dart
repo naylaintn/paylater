@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
-import 'package:http/http.dart' as http;
 import 'package:crypto/crypto.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 import 'package:paylater_startup/controller/user_controller.dart';
 import 'package:paylater_startup/models/check_password.dart';
 import 'package:paylater_startup/models/content_data.dart';

@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:paylater_startup/home_page/balance_information.dart';
 import 'package:paylater_startup/util/colors.dart';
+
 import '../util/size_config.dart' as size_conf;
-import 'package:get/get.dart';
 
 Widget Header(double _width, double _height) {
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paylater_startup/home_page/header.dart';
 import 'package:paylater_startup/home_page/home_body.dart';
-import 'package:paylater_startup/util/colors.dart';
 
 class homeScreen extends StatelessWidget {
   const homeScreen({Key? key}) : super(key: key);

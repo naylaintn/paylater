@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paylater_startup/controller/auth_controller.dart';
-import 'package:paylater_startup/dashboard/dashboard_page.dart';
 import 'package:paylater_startup/forgot_password/forgot_password_screen.dart';
 import 'package:paylater_startup/util/colors.dart';
 import 'package:paylater_startup/util/constants.dart';
