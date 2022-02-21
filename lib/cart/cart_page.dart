@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:paylater_startup/cart/add_voucher.dart';
 import 'package:paylater_startup/cart/cart_footer.dart';
 import 'package:paylater_startup/cart/cart_template.dart';
 import 'package:paylater_startup/cart/cart_template_pickup.dart';
 import 'package:paylater_startup/util/colors.dart';
+
+import 'cart_template_pickup.dart';
 
 class cartPage extends StatelessWidget{
   const cartPage({Key? key}) : super(key: key);

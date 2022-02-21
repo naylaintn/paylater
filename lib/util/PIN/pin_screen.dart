@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:paylater_startup/util/PIN/pin_body.dart';
 import 'package:paylater_startup/util/colors.dart';
-import 'package:get/get.dart';
 
 class PinScreen extends StatelessWidget {
   const PinScreen({Key? key}) : super(key: key);
