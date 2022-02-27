@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:paylater_startup/util/colors.dart';
-import 'package:paylater_startup/util/constants.dart';
 
 class PinBody extends StatefulWidget {
   const PinBody({Key? key}) : super(key: key);

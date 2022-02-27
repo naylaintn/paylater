@@ -3,10 +3,9 @@ import 'package:paylater_startup/home_page/category.dart';
 import 'package:paylater_startup/home_page/promo_information.dart';
 import 'package:paylater_startup/home_page/top_brands_product.dart';
 import 'package:paylater_startup/home_page/top_brands_service.dart';
+import 'package:paylater_startup/product/product_template.dart';
 import 'package:paylater_startup/service/template_service/service_template.dart';
 import 'package:paylater_startup/util/colors.dart';
-import 'package:paylater_startup/product/product_template.dart';
-import 'package:get/get.dart';
 
 Widget HomeBody(double _width, double _height){
 

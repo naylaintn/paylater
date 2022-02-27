@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/util/colors.dart';
 import 'package:paylater_startup/favorites/favorite_template.dart';
+import 'package:paylater_startup/util/colors.dart';
 
 class favoritePage extends StatelessWidget{
   const favoritePage({Key? key}) : super(key: key);

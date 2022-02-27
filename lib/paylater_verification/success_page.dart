@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paylater_startup/util/colors.dart';
 import 'package:get/get.dart';
+import 'package:paylater_startup/util/colors.dart';
 
 class success_page extends StatelessWidget {
   const success_page({Key? key}) : super(key: key);
