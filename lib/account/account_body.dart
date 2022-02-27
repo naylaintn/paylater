@@ -58,14 +58,19 @@ class Account_Body extends StatelessWidget {
                             ),
                           ]
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(Icons.message, color: kColor2, size: 20),
-                          SizedBox(width: _width*0.03,),
-                          Text("Messages", textAlign: TextAlign.center, style: TextStyle(fontSize: 13, color: kTextColor),),
-                        ],
+                      child: FlatButton(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(35))),
+                        onPressed: (){Get.toNamed("/chat_page");},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(Icons.message, color: kColor2, size: 20),
+                            SizedBox(width: _width*0.03,),
+                            Text("Messages", textAlign: TextAlign.center, style: TextStyle(fontSize: 13, color: kTextColor),),
+                          ],
+                        ),
                       ),
                     ),
 
@@ -146,6 +151,8 @@ class Account_Body extends StatelessWidget {
                           ]
                       ),
                       child: FlatButton(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(35))),
                         onPressed: (){Get.toNamed("/paylater_page");},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,

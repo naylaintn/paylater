@@ -4,17 +4,13 @@ import 'package:get/get.dart';
 Widget TopBrandsService(double _width, double _height){
 
   List<topBrand1> brandData = [
-    topBrand1(image1: "assets/images/balenciaga.jpg"),
-    topBrand1(image1: "assets/images/dobro.jpg"),
-    topBrand1(image1: "assets/images/gucci.jpg"),
-    topBrand1(image1: "assets/images/versace_2.jpg"),
+    topBrand1(image1: "assets/images/zap.png"),
+    topBrand1(image1: "assets/images/irwan.jpeg"),
   ];
 
   List<topBrand2> brandData2 = [
-    topBrand2(image2: "assets/images/dolce.jpg"),
-    topBrand2(image2: "assets/images/chanel.jpg"),
-    topBrand2(image2: "assets/images/jooste.jpg"),
-    topBrand2(image2: "assets/images/prada.jpg"),
+    topBrand2(image2: "assets/images/avani.png"),
+    topBrand2(image2: "assets/images/avani_dental.jpg"),
   ];
 
   return SizedBox(
@@ -27,7 +23,7 @@ Widget TopBrandsService(double _width, double _height){
         return  Column(
           children: [
             InkWell(
-              onTap: (){Get.toNamed("/store_screen");},
+              onTap: (){Get.toNamed("/servicestore_screen");},
               child: Container(
                 width: 170,
                 height: 110,

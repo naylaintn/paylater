@@ -42,21 +42,23 @@ Widget Header(double _width, double _height) {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 15, 5, 0),
-                child:  Icon(Icons.message, color: kTextColor, size: 20),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 15, 15, 0),
-                child: Icon(Icons.notifications, color: kTextColor, size: 20),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  onTap: (){Get.toNamed("/chat_page");},
+                  child: Icon(Icons.message, color: kTextColor, size: 20),
                 ),
-            ],
+                SizedBox(width: _width*0.02),
+                GestureDetector(
+                  onTap: (){},
+                  child: Icon(Icons.notifications, color: kTextColor, size: 20),
+                ),
+              ],
+            ),
           ),
-
-          const SizedBox(height: 8),
 
           Container(
             margin: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
@@ -74,7 +76,7 @@ Widget Header(double _width, double _height) {
                   ],
                 ),
 
-                const SizedBox(height: 25),
+                SizedBox(height: _height*0.02),
 
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,7 +86,7 @@ Widget Header(double _width, double _height) {
             ),
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: _height*0.02),
 
           balanceInformation(_width, _height),
         ],

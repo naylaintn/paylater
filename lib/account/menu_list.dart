@@ -42,6 +42,7 @@ class MenuList extends StatelessWidget {
 
 
               GestureDetector(
+                onTap: (){Get.toNamed("/bills_page");},
                 child: Row(
                   children: [
                     Icon(Icons.article_rounded),
@@ -65,6 +66,7 @@ class MenuList extends StatelessWidget {
 
 
               GestureDetector(
+                onTap: (){Get.toNamed("/bookings_page");},
                 child: Row(
                   children: [
                     Icon(Icons.bookmark),
@@ -76,6 +78,7 @@ class MenuList extends StatelessWidget {
 
 
               GestureDetector(
+                onTap: (){Get.toNamed("/CustomerService_page");},
                 child: Row(
                   children: [
                     Icon(Icons.person_outline_outlined),

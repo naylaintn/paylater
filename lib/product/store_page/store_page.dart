@@ -13,6 +13,7 @@ class store_page extends StatelessWidget {
     double _height = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: SizedBox(
           width: _width,
@@ -21,23 +22,7 @@ class store_page extends StatelessWidget {
             physics: const PageScrollPhysics(),
             child: Column(
               children: [
-                Stack(
-                  children: [
-                    const store_header(),
-                    Positioned(
-                      top: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: AppBar(
-                        backgroundColor: Colors.transparent,
-                        elevation: 0,
-                        iconTheme: const IconThemeData(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                const store_header(),
                 const SizedBox(height: 20),
                 const store_tabBar(),
               ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:paylater_startup/account/settings/settings_form.dart';
+import 'package:paylater_startup/util/colors.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -12,7 +13,10 @@ class SettingsScreen extends StatelessWidget {
     double _height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Settings", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: kTextColor)),
+      ),
       body: SizedBox(
         width: _width,
         height: _height,

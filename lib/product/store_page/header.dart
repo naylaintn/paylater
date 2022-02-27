@@ -48,7 +48,7 @@ class _store_headerState extends State<store_header> {
           ),
         ),
 
-        SizedBox(height: 15),
+        SizedBox(height: _height*0.015),
 
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 10),
@@ -59,22 +59,21 @@ class _store_headerState extends State<store_header> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    width: 130,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(7)),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 4,
-                            offset: Offset(0, 2),
-                            color: Colors.grey.withOpacity(0.4),
-                          ),
-                        ]
-                    ),
-                    child: FlatButton(
-                      onPressed: () {},
+                  GestureDetector(
+                    child: Container(
+                      width: _width*0.3,
+                      height: 30,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(7)),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 4,
+                              offset: Offset(0, 2),
+                              color: Colors.grey.withOpacity(0.4),
+                            ),
+                          ]
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,24 +86,24 @@ class _store_headerState extends State<store_header> {
                     ),
                   ),
 
-                  SizedBox(width: 10),
+                  SizedBox(width: _width*0.01),
 
-                  Container(
-                    width: 130,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(7)),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 4,
-                            offset: Offset(0, 2),
-                            color: Colors.grey.withOpacity(0.4),
-                          ),
-                        ]
-                    ),
-                    child: FlatButton(
-                      onPressed: () {},
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      width: _width*0.3,
+                      height: 30,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(7)),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 4,
+                              offset: Offset(0, 2),
+                              color: Colors.grey.withOpacity(0.4),
+                            ),
+                          ]
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -118,7 +117,7 @@ class _store_headerState extends State<store_header> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: _height*0.02),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -140,11 +139,11 @@ class _store_headerState extends State<store_header> {
                       child: FaIcon(FontAwesomeIcons.store, size: 20, color: Colors.grey.withOpacity(0.4)),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: _height*0.01),
                   Text("BRAND NAME", style:  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: _height*0.02),
             ],
           ),
         ),
