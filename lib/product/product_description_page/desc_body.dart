@@ -40,7 +40,7 @@ Widget productDesc_body (double _width, double _height) {
                 fontWeight: FontWeight.bold,
               )),
               SizedBox(height: _height*0.02),
-              const Text("Color",
+              const Text("Variant",
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -54,12 +54,10 @@ Widget productDesc_body (double _width, double _height) {
                   itemBuilder: (context, index){
                     return Container(
                         margin: const EdgeInsets.only(right: 5),
-                        width: 28,
-                        height: 28,
-                        decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          shape: BoxShape.circle,
-                          border: Border.all(color: kSecondaryColor),
+                        width: _width*0.2,
+                        height: _height*0.2,
+                        decoration: const BoxDecoration(
+                          color: Colors.grey,
                         ));
                   },
                 ),
@@ -97,7 +95,22 @@ Widget productDesc_body (double _width, double _height) {
                     fontWeight: FontWeight.bold,
                   )),
               SizedBox(height: _height*0.01),
-              Container(
+              SizedBox(
+                height: _height*0.2,
+                width: _width,
+                child: const Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                    style: TextStyle(
+                      fontSize: 12,
+                    )),
+              ),
+              SizedBox(height: _height*0.02),
+              const Text("Details",
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  )),
+              SizedBox(height: _height*0.01),
+              SizedBox(
                 height: _height*0.2,
                 width: _width,
                 child: const Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",

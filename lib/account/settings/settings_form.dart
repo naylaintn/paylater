@@ -93,7 +93,7 @@ class _SettingsFormState extends State<SettingsForm> {
         SizedBox(height: 20),
 
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             contentPadding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(35)),

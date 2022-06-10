@@ -36,10 +36,10 @@ class _BookingsScreenState extends State<BookingsScreen> with TickerProviderStat
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Bookings", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: kTextColor)),
+        title: const Text("Bookings", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: kTextColor)),
         bottom: TabBar(
           labelColor: kTextColor,
-          labelStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          labelStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           unselectedLabelColor: Colors.grey.withOpacity(0.5),
           indicator: const BoxDecoration(
             border: Border(
@@ -47,7 +47,7 @@ class _BookingsScreenState extends State<BookingsScreen> with TickerProviderStat
             ),
           ),
           controller: _tabController,
-          tabs: [
+          tabs: const [
             Text("UPCOMING"),
             Text("COMPLETED"),
           ],
@@ -58,7 +58,7 @@ class _BookingsScreenState extends State<BookingsScreen> with TickerProviderStat
         height: _height,
         child: TabBarView(
           controller: _tabController,
-          children: [
+          children: const [
             UpcomingScreen(),
             CompletedScreen(),
           ],

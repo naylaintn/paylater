@@ -33,7 +33,7 @@ class productDesc_screen extends StatelessWidget {
           children: <Widget>[
             Expanded(
                 child: Container(
-                  margin: EdgeInsets.only(right: 10),
+                  margin: const EdgeInsets.only(right: 10),
                   width: _width/2,
                   height: 40,
                   child: FlatButton(

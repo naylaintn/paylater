@@ -29,10 +29,10 @@ class MenuList extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              GestureDetector(
+              InkWell(
                 onTap: (){Get.toNamed("/settings_page");},
                 child: Row(
-                  children: [
+                  children: const <Widget>[
                     Icon(Icons.settings),
                     SizedBox(width: 5,),
                     Text("SETTINGS"),
@@ -41,10 +41,10 @@ class MenuList extends StatelessWidget {
               ),
 
 
-              GestureDetector(
+              InkWell(
                 onTap: (){Get.toNamed("/bills_page");},
                 child: Row(
-                  children: [
+                  children: const <Widget>[
                     Icon(Icons.article_rounded),
                     SizedBox(width: 5,),
                     Text("BILLS"),
@@ -53,10 +53,10 @@ class MenuList extends StatelessWidget {
               ),
 
 
-              GestureDetector(
+              InkWell(
                 onTap: (){Get.toNamed("/TransactionHistory_page");},
                 child: Row(
-                  children: [
+                  children: const <Widget>[
                     Icon(Icons.history),
                     SizedBox(width: 5,),
                     Text("TRANSACTION HISTORY"),
@@ -65,10 +65,10 @@ class MenuList extends StatelessWidget {
               ),
 
 
-              GestureDetector(
+              InkWell(
                 onTap: (){Get.toNamed("/bookings_page");},
                 child: Row(
-                  children: [
+                  children: const <Widget>[
                     Icon(Icons.bookmark),
                     SizedBox(width: 5,),
                     Text("BOOKINGS"),
@@ -77,10 +77,10 @@ class MenuList extends StatelessWidget {
               ),
 
 
-              GestureDetector(
+              InkWell(
                 onTap: (){Get.toNamed("/CustomerService_page");},
                 child: Row(
-                  children: [
+                  children: const <Widget>[
                     Icon(Icons.person_outline_outlined),
                     SizedBox(width: 5,),
                     Text("CUSTOMER SERVICE"),

@@ -21,7 +21,7 @@ Widget Header(double _width, double _height, String name) {
     children: [
 
       AspectRatio(
-        aspectRatio: size_conf.screenSizeIndex(_width)>2?size_conf.screenSizeIndex(_width)>5?16/4:16/4:4/3,
+        aspectRatio: size_conf.screenSizeIndex(_width)>2?size_conf.screenSizeIndex(_width)>5? 16/4 :16/4 :4/3,
         child: Container(
             width: _width,
             height: _height,
@@ -48,14 +48,14 @@ Widget Header(double _width, double _height, String name) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                GestureDetector(
+                InkWell(
                   onTap: (){Get.toNamed("/chat_page");},
-                  child: Icon(Icons.message, color: kTextColor, size: 20),
+                  child: const Icon(Icons.message, color: kTextColor, size: 20),
                 ),
                 SizedBox(width: _width*0.02),
-                GestureDetector(
+                InkWell(
                   onTap: (){},
-                  child: Icon(Icons.notifications, color: kTextColor, size: 20),
+                  child: const Icon(Icons.notifications, color: kTextColor, size: 20),
                 ),
               ],
             ),

@@ -21,7 +21,7 @@ class _SignUpFormState extends State<SignUpForm> {
   bool remember = false;
   final List<String> errors = [];
 
-  AuthController _authController = Get.put(AuthController());
+  final AuthController _authController = Get.put(AuthController());
 
   void addError({required String error}) {
     if (!errors.contains(error))

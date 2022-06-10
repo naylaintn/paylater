@@ -4,13 +4,9 @@ import 'no_account_text.dart';
 import 'sign_form.dart';
 
 class Body extends StatelessWidget {
-  
-  
-  
   @override
   Widget build(BuildContext context) {
 
-    double _width = MediaQuery.of(context).size.width;
     double _height = MediaQuery.of(context).size.height;
     
     return SafeArea(
@@ -23,7 +19,7 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: _height * 0.04),
-                Text(
+                const Text(
                   "Selamat Datang",
                   style: TextStyle(
                     color: Colors.black,
@@ -31,15 +27,15 @@ class Body extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   "Masuk dengan email dan password kamu",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: _height * 0.08),
                 SignForm(),
                 SizedBox(height: _height * 0.08),
-                SizedBox(height: 20),
-                NoAccountText(),
+                const SizedBox(height: 20),
+                const NoAccountText(),
               ],
             ),
           ),

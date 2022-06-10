@@ -17,7 +17,7 @@ class AuthController extends GetxController{
   final _ph = ph;
   final _phDomain = domain;
 
-  UserController _user = Get.put(UserController());
+  final UserController _user = Get.put(UserController());
 
   var check = CheckPassword(userData: UserModel(), responseCode: "919").obs;
   var showButton = RxBool(true).obs;

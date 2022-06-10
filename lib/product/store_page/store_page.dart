@@ -21,10 +21,10 @@ class store_page extends StatelessWidget {
           child: SingleChildScrollView(
             physics: const PageScrollPhysics(),
             child: Column(
-              children: [
-                const store_header(),
-                const SizedBox(height: 20),
-                const store_tabBar(),
+              children: const [
+                store_header(),
+                SizedBox(height: 20),
+                store_tabBar(),
               ],
             ),
           ),

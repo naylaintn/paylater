@@ -52,7 +52,7 @@ class _tab_barState extends State<tab_bar> with TickerProviderStateMixin {
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(1,2),
+                      offset: const Offset(1,2),
                       color: Colors.grey.withOpacity(0.5),
                       blurRadius: 2,
                     ),

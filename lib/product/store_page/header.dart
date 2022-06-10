@@ -19,7 +19,7 @@ class _store_headerState extends State<store_header> {
 
     return Column(
       children: [
-        Container(
+        SizedBox(
           width: _width,
           height: 300,
           child: Stack(
@@ -39,8 +39,8 @@ class _store_headerState extends State<store_header> {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Color(0xFF343434).withOpacity(0.4),
-                        Color(0xFF343434).withOpacity(0.15),
+                        const Color(0xFF343434).withOpacity(0.4),
+                        const Color(0xFF343434).withOpacity(0.15),
                       ]),
                 ),
               ),
@@ -51,7 +51,7 @@ class _store_headerState extends State<store_header> {
         SizedBox(height: _height*0.015),
 
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,17 +59,17 @@ class _store_headerState extends State<store_header> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  GestureDetector(
+                  InkWell(
                     child: Container(
                       width: _width*0.3,
                       height: 30,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(7)),
+                          borderRadius: BorderRadius.all(const Radius.circular(7)),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 4,
-                              offset: Offset(0, 2),
+                              offset: const Offset(0, 2),
                               color: Colors.grey.withOpacity(0.4),
                             ),
                           ]
@@ -77,7 +77,7 @@ class _store_headerState extends State<store_header> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
+                        children: const [
                           Icon(Icons.message, color: kTextColor, size: 10),
                           SizedBox(width: 5),
                           Text("Send a Message", style: TextStyle(fontSize: 10)),
@@ -88,18 +88,18 @@ class _store_headerState extends State<store_header> {
 
                   SizedBox(width: _width*0.01),
 
-                  GestureDetector(
+                  InkWell(
                     onTap: (){},
                     child: Container(
                       width: _width*0.3,
                       height: 30,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(7)),
+                          borderRadius: const BorderRadius.all(Radius.circular(7)),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 4,
-                              offset: Offset(0, 2),
+                              offset: const Offset(0, 2),
                               color: Colors.grey.withOpacity(0.4),
                             ),
                           ]
@@ -107,7 +107,7 @@ class _store_headerState extends State<store_header> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
+                        children: const [
                           FaIcon(FontAwesomeIcons.mapMarkerAlt, color: kTextColor, size: 10),
                           SizedBox(width: 5),
                           Text("Store Location", style: TextStyle(fontSize: 10)),
@@ -130,7 +130,7 @@ class _store_headerState extends State<store_header> {
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 4,
-                            offset: Offset(0, 2),
+                            offset: const Offset(0, 2),
                             color: Colors.grey.withOpacity(0.4),
                           ),
                         ]
@@ -140,7 +140,7 @@ class _store_headerState extends State<store_header> {
                     ),
                   ),
                   SizedBox(height: _height*0.01),
-                  Text("BRAND NAME", style:  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  const Text("BRAND NAME", style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 ],
               ),
               SizedBox(height: _height*0.02),
