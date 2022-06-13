@@ -16,9 +16,6 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-
     return GetBuilder<DashboardController>(
       init: DashboardController(),
       builder: (controller) {
@@ -27,7 +24,7 @@ class DashboardPage extends StatelessWidget {
           body: SafeArea(
             child: IndexedStack(
                   index: controller.tabIndex,
-                  children: [
+                  children: const [
                     homeScreen(),
                     favoritePage(),
                     CategoryPage(),
@@ -39,7 +36,7 @@ class DashboardPage extends StatelessWidget {
           bottomNavigationBar: Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
               boxShadow: [
                 BoxShadow(
                 blurRadius: 10,
@@ -56,7 +53,7 @@ class DashboardPage extends StatelessWidget {
               showSelectedLabels: false,
               showUnselectedLabels: false,
               type: BottomNavigationBarType.fixed,
-              backgroundColor: Color(0x00ffffff),
+              backgroundColor: const Color(0x00ffffff),
               items: const <BottomNavigationBarItem> [
                 BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.home), label: ""),
                 BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidHeart), label: ""),
